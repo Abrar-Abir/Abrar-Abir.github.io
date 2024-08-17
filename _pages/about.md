@@ -2,7 +2,8 @@
 layout: about
 title: about
 permalink: /
-subtitle: another side character [//]: <> (<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.)
+subtitle: another side character 
+[//]: <> (<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.)
 
 profile:
   align: left
