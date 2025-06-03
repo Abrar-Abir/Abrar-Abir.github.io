@@ -7,7 +7,7 @@ subtitle: another side character
 
 profile:
   align: left
-  image: prof_pic.jpg
+  image: assets.png
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Doha, Qatar</p>
