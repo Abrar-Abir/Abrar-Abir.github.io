@@ -8,7 +8,7 @@ subtitle: another side character
 profile:
   align: left
   image: letter.png
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     <p>Doha, Qatar</p>
 
@@ -26,4 +26,3 @@ In Spring 2025, I completed a course in prompt engineering and have since been e
 
 Outside of tech, I enjoy experimenting with typography.
 
-Reachable at `abir@cmu.edu`
