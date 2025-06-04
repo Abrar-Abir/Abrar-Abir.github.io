@@ -8,18 +8,18 @@ tags: random
 tabs: true
 ---
 
-- https://mynoise.net/
+- [mynoise.net](https://mynoise.net/) : original natural sounds for free - one of the bookmarks.
 
-- https://thebullshitmachines.com/
+- [thebullshitmachines.com](https://thebullshitmachines.com/) : an honest intro to LLMs for everyone - interactive & engaging.
 
-- https://www.cs.utexas.edu/~EWD/welcome.html
+- [www.cs.utexas.edu/~EWD](https://www.cs.utexas.edu/~EWD/welcome.html) : blog of Djikstra - a hidden gem.
 
-- https://www.johnlangdon.net/
+- [johnlangdon.net](https://www.johnlangdon.net/) : my inspiration for typography.
 
-- https://sigbovik.org/
+- [sigbovik.org](https://sigbovik.org/) : healthy entertainment without compromising attention span.
 
-- https://dontasktoask.com/
+- [dontasktoask.com](https://dontasktoask.com/) : a public service announcement.
 
-- https://ai-2027.com/
+- [ai-2027.com](https://ai-2027.com/) : science fiction [or is it?] - let's see how far it goes.
 
-- https://www.quantamagazine.org/when-chatgpt-broke-an-entire-field-an-oral-history-20250430/
+- [when-chatgpt-broke-an-entire-field](https://www.quantamagazine.org/when-chatgpt-broke-an-entire-field-an-oral-history-20250430/) : this is real, no aggegaration - if you know you know.

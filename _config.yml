@@ -132,7 +132,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: ReadME # blog_name will be displayed in your blog page
-blog_description: bits & bites
+blog_description: bits & bytes
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
