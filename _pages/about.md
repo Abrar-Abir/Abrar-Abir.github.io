@@ -24,7 +24,7 @@ In parallel, I work with the Bioinformatics Team at Sidra Medicine as a full-sta
 
 In Spring 2025, I completed a course in prompt engineering and have since been exploring generative AI technologies — from research prototypes to practical industry use cases.
 
-My intellectual curiosity include: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
+My intellectual curiosity includes: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
 
 Outside of tech, I enjoy experimenting with typography.
 
