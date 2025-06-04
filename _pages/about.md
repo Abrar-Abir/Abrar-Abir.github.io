@@ -16,7 +16,7 @@ news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
-... a Computer Science major at Carnegie Mellon University in Qatar, expected to graduate in Fall '25, with a concentration in Security & Privacy.
+... a Computer Science major at Carnegie Mellon University in Qatar, expected to graduate in Fall '25 - with concentration in Security & Privacy.
 
 I took an NLP course in Spring '24, which led to work on two shared tasks in Summer '24. The results were published at conferences. Currently, I'm working on Automated Essay Scoring for Arabic.
 

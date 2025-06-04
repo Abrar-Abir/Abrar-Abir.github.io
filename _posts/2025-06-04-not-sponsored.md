@@ -10,7 +10,7 @@ tabs: true
 
 - [sigbovik.org](https://sigbovik.org/) : healthy entertainment without compromising attention span - rare these days.
 
-- [thebullshitmachines.com](https://thebullshitmachines.com/) : an honest intro to LLMs for everyone - interactive & engaging.
+- [thebullshitmachines.com](https://thebullshitmachines.com/) : an honest intro to LLMs for everyone - interactive & fun.
 
 - [johnlangdon.net](https://www.johnlangdon.net/) : fantastic ambigrams and where to find them - inspiring.
 
