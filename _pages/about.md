@@ -10,7 +10,7 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>reachable at abir@cmu.edu</p>
+    <p> ... can you see? </p>
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
