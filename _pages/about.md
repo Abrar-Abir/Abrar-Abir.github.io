@@ -10,7 +10,7 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>A draft fusion typography</p>
+    <p>     reachable at abir@cmu.edu</p>
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
@@ -27,6 +27,4 @@ In Spring 2025, I completed a course in prompt engineering and have since been e
 My intellectual curiosity include: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
 
 Outside of tech, I enjoy experimenting with typography.
-
-Reachable at `abir@cmu.edu`
 
