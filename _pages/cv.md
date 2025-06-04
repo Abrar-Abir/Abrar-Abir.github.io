@@ -1,12 +1,12 @@
 ---
-layout: cv
+layout: about
 permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: pause.pdf
-description: This is a description of the page.
+cv_pdf: Pause.pdf
+description: It's the button
 toc:
-  sidebar: left
+  sidebar: false
 ---
 

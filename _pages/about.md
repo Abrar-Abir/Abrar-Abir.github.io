@@ -18,7 +18,7 @@ social: false # includes social icons at the bottom of the page
 ---
 ... a Computer Science major at Carnegie Mellon University in Qatar, expected to graduate in Fall '25, with a concentration in Security & Privacy.
 
-I took an NLP course in Spring '24, which led to work on two shared tasks during Summer '24. The results were published at conferences. Currently, I'm working on Automated Essay Scoring for Arabic.
+I took an NLP course in Spring '24, which led to work on two shared tasks in Summer '24. The results were published at conferences. Currently, I'm working on Automated Essay Scoring for Arabic.
 
 In parallel, I work with the Bioinformatics team at Sidra Medicine as a full-stack developer. I’m building a system that automates data extraction workflows and allows researchers to interact with both metadata and genomic files.
 
