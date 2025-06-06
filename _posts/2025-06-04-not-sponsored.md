@@ -7,6 +7,7 @@ tags: random
 # categories: sample-posts
 tabs: true
 ---
+# random (or arbitrary?) collection of URLs
 
 - [sigbovik.org](https://sigbovik.org/) : healthy entertainment without compromising attention span - rare these days.
 
