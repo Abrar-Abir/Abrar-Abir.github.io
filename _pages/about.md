@@ -10,10 +10,11 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p> title: hidden in plain sight </p>
+    <p> hidden (?) in plain sight </p>
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
+# controlled chaos
 social: false # includes social icons at the bottom of the page
 ---
 ... a Computer Science major at [Carnegie Mellon University in Qatar](https://www.qatar.cmu.edu/) - expected to graduate in Fall '25 - with concentration in [Security & Privacy](https://s3d.cmu.edu/education/undergrad-programs/secpriv/).
