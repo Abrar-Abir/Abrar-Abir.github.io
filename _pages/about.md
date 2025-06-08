@@ -10,7 +10,7 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p> hidden in plain sight ... ? </p>
+    <p> title: hidden (?) in plain sight </p>
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
@@ -28,5 +28,5 @@ Among [other](https://abrar-abir.github.io/blog/2025/not-sponsored/) things, my 
 
 In my downtime, I tinker with typography (*on your left*).
 
-`ude . umc @ riba`
+`lastname at cmu dot edu`
 
