@@ -10,7 +10,7 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p> "hidden in plain sight (?)"</p>
+    <p> "  hidden in plain sight (?)  "</p>
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
@@ -27,7 +27,7 @@ In Spring '25, I took a [prompt engineering](https://www.cs.cmu.edu/~breaux/prom
 
 Among [other](https://abrar-abir.github.io/blog/2025/not-sponsored/) things, my intellectual curiosity includes: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
 
-In my downtime, I tinker with typography (*on your left*).
+In my downtime, I tinker with lettering (*on your left*).
 
 `lastname at cmu dot edu`
 
