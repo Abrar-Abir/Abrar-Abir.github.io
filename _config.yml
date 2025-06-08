@@ -48,9 +48,9 @@ rss_icon: true
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
-socials_in_search: true
-bib_search: true
+search_enabled: false
+socials_in_search: false
+bib_search: false
 
 # Dimensions
 max_width: 930px
@@ -94,7 +94,7 @@ pinterest_id: # your pinterest id
 publons_id: # your ID on Publons
 quora_username: # your Quora username
 research_gate_profile: # your profile on ResearchGate
-scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
+scholar_userid: # your Google Scholar ID
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
 spotify_id: # your spotify id
@@ -111,7 +111,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  Reach me at `abir@cmu.edu`.
+  `lastname at cmu dot edu`
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -131,8 +131,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: ReadME # blog_name will be displayed in your blog page
-blog_description: mediocre thoughts - poorly documented
+blog_name: README # blog_name will be displayed in your blog page
+blog_description: controlled chaos - poorly documented
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
