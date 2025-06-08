@@ -26,7 +26,7 @@ In Spring '25, I took a [prompt engineering](https://www.cs.cmu.edu/~breaux/prom
 
 Among [other](https://abrar-abir.github.io/blog/2025/not-sponsored/) things, my intellectual curiosity includes: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
 
-In my downtime, I tinker with typography.
+In my downtime, I tinker with typography (*on your left*).
 
-`lastname at cmu dot edu`
+`ude . umc @ riba`
 
