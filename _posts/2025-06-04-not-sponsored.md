@@ -5,9 +5,17 @@ date: 2025-06-04 00:32:13
 description: random (or arbitrary?) collection of URLs
 tags: random
 # categories: sample-posts
+# https://www.behance.net/
+# https://www.instructables.com/
+# https://archimedes-lab.org/
+# https://www.creativethinkinghub.com/
+# https://www.sporcle.com/
+
 tabs: true
 ---
-# random (or arbitrary?) collection of URLs
+## random (or arbitrary?) collection of URLs
+
+
 
 - [sigbovik.org](https://sigbovik.org/) : healthy entertainment without compromising attention span - rare these days.
 
