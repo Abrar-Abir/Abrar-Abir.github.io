@@ -9,37 +9,6 @@
 # ---
 
 
-	12 Feb 2023, 13:15
-
-
-	To: All current and past members of the CS community at CMUQ
-
-	Dear all,
-
-
-	The CS program on this campus has no logo of its own. Are you interested in designing one? If so, please read on!
-
-	We are looking for a logo for our local CS program. We could use the old School of Computer Science logo from the main campus, the famous dragon:
-
-
-	but we would much prefer something that represents all three elements of our identity: Computer Science, Carnegie Mellon, Qatar. In search of that, we are launching a contest! If you have a good idea, please submit it. Who knows? Maybe you are destined to be the proud parent of the new SCS@CMUQ logo!
-
-	Who can submit: Any current or past member (student, faculty, staff) of the CS community at CMUQ.
-
-	When to submit: The deadline is March 5, 2023
-
-	What to submit: Two mandatory items:
-
-	A digital file containing your design - must be up to 5MB.
-
-	A short paragraph justifying why your design makes sense - must be up to 500 words.
-
-	What next? A committee of 2 faculty, 2 students, 2 staff, and 1 MPR member (none of whom participate in the contest) will review the submissions and select up to 3 winners. If 0 winners are selected, the new logo will be the dragon. If 2 or 3 winners are selected, then the final winner will be selected by polling the community.
-
-	...
-
-
-
 The logo features a bold red phoenix enclosed in a partially open circle, representing the spirit and identity of the Computer Science program at Carnegie Mellon University in Qatar (CMUQ). The phoenix, a mythical bird known for rising from its own ashes, symbolizes resilience, renewal, and continuous transformation—qualities that are deeply aligned with the nature of computer science as a discipline. It captures the innovation, adaptability, and problem-solving ethos that define the field, as well as the growth and evolution of the CS community at CMUQ.
 
 The choice of deep red directly reflects Carnegie Mellon University’s official colors, ensuring a strong visual and symbolic connection to the institution’s identity. The stylized, dynamic form of the phoenix projects confidence and excellence, echoing the high standards and global reputation of CMU’s School of Computer Science. Encircling the bird is a sleek, incomplete ring that suggests unity, inclusiveness, and a sense of belonging—key values within the close-knit CS community at the Qatar campus.
@@ -90,20 +59,49 @@ In the end, effective logo design isn't about creating pretty pictures—it's ab
 
 Sometimes the best logos are the ones that surprise even their creators with how much story they can tell in a single, elegant form. This phoenix, I believe, has stories yet to tell.
 
-# Expecto Sigilum : Conjuring Falco Ignis
-*Confession of an accidental spellcast*
+# Expecto Sigilum : An accidental Spell
+*Confession of conjuring Flaco Ignis - the SCS@CMUQ logo*
+*On the Unexpected Emergence of Flaco Ignis – SCS@CMUQ’s Iconic Mark*
 
-*A confession from someone who definitely shouldn't have tried this*
+	12 Feb 2023, 13:15
+
+
+	To: All current and past members of the CS community at CMUQ
+
+	Dear all,
+
+
+	The CS program on this campus has no logo of its own. Are you interested in designing one? If so, please read on!
+
+	We are looking for a logo for our local CS program. We could use the old School of Computer Science logo from the main campus, the famous dragon:
+
+
+	but we would much prefer something that represents all three elements of our identity: Computer Science, Carnegie Mellon, Qatar. In search of that, we are launching a contest! If you have a good idea, please submit it. Who knows? Maybe you are destined to be the proud parent of the new SCS@CMUQ logo!
+
+	Who can submit: Any current or past member (student, faculty, staff) of the CS community at CMUQ.
+
+	When to submit: The deadline is March 5, 2023
+
+	What to submit: Two mandatory items:
+
+	A digital file containing your design - must be up to 5MB.
+
+	A short paragraph justifying why your design makes sense - must be up to 500 words.
+
+	What next? A committee of 2 faculty, 2 students, 2 staff, and 1 MPR member (none of whom participate in the contest) will review the submissions and select up to 3 winners. If 0 winners are selected, the new logo will be the dragon. If 2 or 3 winners are selected, then the final winner will be selected by polling the community.
+
+	...
+
 
 	I am not a graphic designer or illustrator of any sort. but when I received the email, I thoguht to myself, it'd be nice if I could design a logo. 
 	Time passed, I almost forgot. Once I was clearing out my inbox to take a break from my coding sessions [this is one of those things like clening my  room when I have something due but I dont feel like working, so I decide to do something that is way out of my comfort zone instead - if you know]. And I was looking at that email again. I couldnt shake off the temptation to just try and see how far it goes - cause there will be voting to choose the best logo. I wanted to submit one just to see where it would stand. Again, i'm not a graphic designer/illustrator, so I dont know to use photoshop or anything. I spent a couple hours in total. brainstorming, using google image search, microsoft photos [to crop and edit images] and microsoft paint to put overlaps of cropped peices. At hte end, of course it was looking horrible, and I wanted something simple - monochromatic. So, at the end, I run a python code to color all the non-white part of the image to cmu red color - usually you'd vector trace the outline and then fill, but again i'm not an illustrator.  
 
 
-Let me start with a disclaimer: I am not a graphic designer. I can barely draw a decent stick figure, and my idea of artistic software is Microsoft Paint. So when that email landed in my inbox asking for logo submissions for CMUQ's Computer Science program, my first thought was "well, that's not for me" followed immediately by filing it away in the digital equivalent of "maybe later."
+Let me start with a disclaimer: I am not a graphic designer. I can barely navigate beyond drag-and-drop tools - can't even get past the splash screen of professional illustration software. So when that email landed in my inbox asking for logo submissions for CMUQ's Computer Science program, my first thought was "well, that's not for me" followed immediately by filing it away in the digital equivalent of "maybe later."
 
 Time passed. I almost forgot about it entirely.
 
-## The Art of Productive Procrastination
+-------
 
 You know that feeling when you have a coding assignment due and suddenly cleaning your room becomes the most urgent task in the world? That's exactly where I was when I found myself excavating my inbox during what was supposed to be a study break. There it was again—that logo contest email, staring at me like an interesting puzzle I'd left unsolved.
 
@@ -113,7 +111,7 @@ There was something irresistibly appealing about the challenge. Here was a probl
 
 So I did what any reasonable person would do: I opened Microsoft Paint.
 
-## The Tools of Necessity
+---
 
 My design arsenal was, shall we say, unconventional:
 - Google Image Search (for "research")
@@ -123,7 +121,7 @@ My design arsenal was, shall we say, unconventional:
 
 I started from just browsing images, trying to understand what made logos work. Phoenix imagery kept appearing in my searches—this mythological bird that dies and comes back to life. The symbolism felt perfect for computer science. We're constantly building things, watching them fail, then rebuilding them better. Code breaks, we fix it. Systems crash, we architect them stronger. The phoenix wasn't just a pretty bird; it was basically a CS student's spirit animal.
 
-## The Elegant Art of Digital Collage
+---
 
 What followed was perhaps the most amateur hour of design work ever attempted. I found phoenix silhouettes, cropped them with the precision of someone using a butter knife for surgery, and started overlaying pieces in Paint like I was solving a jigsaw puzzle. The result was... well, let's call it "rough."
 
@@ -131,7 +129,7 @@ But here's the thing about constraints—they force creativity. I couldn't make 
 
 The circular frame happened almost by accident. I was trying to contain the chaos of my phoenix collage, and a circle felt like the simplest boundary. Leaving it open wasn't some profound statement about growth and possibility—it was just easier to draw that way.
 
-## When Code Becomes Your Design Tool
+---
 
 After a couple hours of digital arts and crafts, I had something that resembled a logo, but it looked exactly like what it was: a franken-creation of cropped images held together by Paint and determination. The colors were all wrong, the edges were rough, and it had that unmistakable "made by someone who doesn't know what they're doing" quality.
 
@@ -145,13 +143,13 @@ Instead of learning to use proper design software (which would have taken weeks)
 
 Sometimes the most direct solution is the best solution, even if it's not the "right" way.
 
-## The Unexpected Poetry of Amateur Hour
+---
 
 Looking at the final result, I realized I'd accidentally stumbled into something that felt authentic. The angular, slightly rough edges gave it a digital quality that seemed appropriate for a CS program. The bold red silhouette was striking in its simplicity. The phoenix, despite being cobbled together from Google image searches, somehow retained its essential power and grace.
 
 The falcon-like qualities I mentioned in my submission? That was me trying to retroactively find meaning in happy accidents. The truth is, when you're working with limited skills and basic tools, you take what you can get and find the story afterward.
 
-## The Real Design Lesson
+---
 
 What I learned from this accidental foray into logo design wasn't about color theory or composition principles. It was about the power of constraints and the courage to attempt something outside your comfort zone. Every programmer knows that the best solutions often come from working within limitations, from finding creative ways around obstacles.
 
@@ -159,7 +157,7 @@ My Phoenix wasn't born from design expertise—it emerged from the same problem-
 
 The fact that other people saw merit in this Microsoft Paint phoenix says something about the universality of good ideas, regardless of execution polish. Sometimes authenticity trumps technique, and sometimes the best tool for the job is whatever you have access to.
 
-## The Vote of Confidence
+---
 
 When the contest results came in, I was as surprised as anyone. Here was a logo created by someone who learned design principles through trial and error, executed with consumer software and a Python script, competing against submissions from people who actually knew what they were doing.
 
