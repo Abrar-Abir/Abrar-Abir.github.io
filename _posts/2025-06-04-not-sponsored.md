@@ -10,6 +10,7 @@ tags: random
 # https://archimedes-lab.org/
 # https://www.creativethinkinghub.com/
 # https://www.sporcle.com/
+# https://www.cmu.edu/50/founder-stories/story-simon.html
 
 tabs: true
 ---
