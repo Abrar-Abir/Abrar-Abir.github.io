@@ -11,7 +11,9 @@ tags: random
 # https://www.creativethinkinghub.com/
 # https://www.sporcle.com/
 # https://www.cmu.edu/50/founder-stories/story-simon.html
-
+# https://lettermeme.com/
+# https://towardsdatascience.com/
+# https://ambivalid.wordpress.com/2012/12/22/my-ambigram-style/
 tabs: true
 ---
 ## random (or arbitrary?) collection of URLs
