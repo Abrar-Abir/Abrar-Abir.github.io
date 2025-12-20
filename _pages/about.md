@@ -10,7 +10,7 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p> "   hidden in plain sight    "</p>
+    <p> "   abrar or abir    "</p>
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"

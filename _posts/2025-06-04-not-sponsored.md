@@ -14,6 +14,7 @@ tags: random
 # https://lettermeme.com/
 # https://towardsdatascience.com/
 # https://ambivalid.wordpress.com/2012/12/22/my-ambigram-style/
+# https://orilab.art/
 tabs: true
 ---
 ## random (or arbitrary?) collection of URLs
