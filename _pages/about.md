@@ -10,7 +10,7 @@ profile:
   image: letter.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    abrar or abir, that is the...
+    abrar, or abir, that is the question:
 
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
