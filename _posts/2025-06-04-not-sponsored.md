@@ -72,4 +72,4 @@ tabs: true
 - [www.cs.utexas.edu/~EWD](https://www.cs.utexas.edu/~EWD/welcome.html) : blog of Djikstra - a hidden gem.
 - [mynoise.net](https://mynoise.net/) : original natural sounds for free - no ads.
 - [orilab.art](https://orilab.art/) : the aesthetics and language of folding.
-- [x.com/TheAITimeline](https://x.com/TheAITimeline) : speaks for itself.
+<!-- - [x.com/TheAITimeline](https://x.com/TheAITimeline) : speaks for itself. -->
