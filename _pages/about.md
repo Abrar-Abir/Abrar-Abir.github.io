@@ -7,7 +7,7 @@ subtitle: another side character
 
 profile:
   align: left
-  image: letter.png
+  image: letter.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     "abrar or abir?"
