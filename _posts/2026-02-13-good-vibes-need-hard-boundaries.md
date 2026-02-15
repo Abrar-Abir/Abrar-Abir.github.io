@@ -35,6 +35,7 @@ It never did.
 I started to think I should have listened to those wise people - who have already gone through the experience and warned us about its limitations. Once more I cursed the people who have pumped up AI's capabilities out of proportion - knowingly (for business profit) or unknowingly (how can that happen?). If Dante was alive, he might reserve the lowest circle of hell for them in his Inferno.
 
 Anyways, a few days later on a 'luxurious afternoon', when the bitterness started to drift away, I decided to give it another attempt - starting from scratch
+
 ---
 
 This time, I stripped everything back. No PostgreSQL, no SQLite - the app only needs to store an API key, so just use browser localStorage. For the frontend: React, but allowed to use [shadcn/ui](https://ui.shadcn.com/) components only. I described exactly how I wanted the interface to look and - just as important - what *not* to add. [Agents love to over-architect](https://addyosmani.com/blog/agentic-engineering/).
