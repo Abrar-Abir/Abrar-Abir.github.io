@@ -8,15 +8,15 @@ tags: ai genomics vibe-coding
 
 I had been talking about [AlphaGenome](https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/) for maybe 10 minutes before I realized very few people were going to try it by themselves.[^1]
 
-Not because they weren't interested (at least in my perception) but coding in this field means bash for bioinformatics pipelines and [R for visualization](https://divingintogeneticsandgenomics.com/post/r-or-python-for-bioinformatics/). [Python isn't part of the toolchain](https://news.ycombinator.com/item?id=40603696) - not yet, not even with gen AI making code generation more accessible.[^2] I had miscalculated how much of a barrier that is. It's not too high of a barrier. But it's *there*...
+Not because they weren't interested (at least in my perception) but coding in this field means bash scripting for bioinformatics pipelines and [R for visualization](https://divingintogeneticsandgenomics.com/post/r-or-python-for-bioinformatics/). [Python isn't part of the toolchain](https://news.ycombinator.com/item?id=40603696) - not yet, not even with gen AI making code generation more accessible.[^2] I had miscalculated how much of a barrier that is. It's not too high a barrier. But it's *there*...
 
-So I kept thinking about it - what if there was a user interface? Something you could just install and self-host. A wrapper that takes dealing with Python syntax out of the equation - not to dumb anything down but to get out of the way. Move things even slightly in the direction of [ML adoption in bio research](https://www.fiosgenomics.com/bioinformatics-2025-outlook-thoughts-from-bioinformaticians/), or at least toward understanding what these models can do.
+So I kept thinking about it - what if there was a user interface on top of it? Something you could just install and self-host. A wrapper that takes dealing with Python syntax out of the equation - not to dumb anything down but to get out of the way. Move things even slightly in the direction of [ML adoption in bio research](https://www.fiosgenomics.com/bioinformatics-2025-outlook-thoughts-from-bioinformaticians/), or at least toward understanding what these models can do.
 
-Surely someone has thought about it already and buil it (right?). Nope. I searched with hope; but couldn't find any (which kind of made me sad, bioinformatics / genomics world really needs more attention, but anyways) so I decided to build one myself.
+Surely someone has thought about it already and built it (right?). Nope. I searched with hope, but couldn't find any (which kind of made me sad; the bioinformatics/genomics world really needs more attention, but anyway) so I decided to build one myself.
 
 I also had a hidden motive. I'd been reading about [vibe coding](https://x.com/karpathy/status/1886192184808149383) for months - people [celebrating it](https://simonwillison.net/2025/Mar/19/vibe-coding/), people [ridiculing it](https://stackoverflow.blog/2026/01/02/a-new-worst-coder-has-entered-the-chat-vibe-coding-without-code-knowledge/) - but I hadn't formed any opinion of my own yet. I wanted to get into the water.
 
-Vibe coding itself isn't well defined, or rather I should say ill-defined. But instead of going into another rabbithole of definitions, I find Dan Shapiro's [framework](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) very useful - a spectrum-like representation rather than a concrete one. I was aiming for Level 3, maybe 4. Don't touch the codebase. Minimally review. If it works, it works.
+Vibe coding itself isn't well defined, or rather, I should say, it's ill-defined. But instead of going into another rabbit hole of definitions, I find Dan Shapiro's [framework](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) very useful - a spectrum-like representation rather than a concrete one. I was aiming for Level 3, maybe 4. Don't touch the codebase. Minimally review. If it works, it works.
 
 It did not work.
 
@@ -32,9 +32,9 @@ More sessions, more drift. More drift, more bugs. More bugs, more sessions. I ke
 
 It never did.
 
-I started to think I should have listened to those wise people - who have already gone through the experience and warned us about its limitations. Once more I cursed the people who have pumped up AI's capabilities out of proportion - knowingly (for business profit) or unknowingly (how can that happen?). If Dante was alive, he might reserve the lowest circle of hell for them in his Inferno.
+I started to think I should have listened to those wise people - who had already gone through the experience and warned us about its limitations. Once more I cursed the people who had pumped up AI's capabilities out of proportion - knowingly (for business profit) or unknowingly (how could that happen?). If Dante were alive, he might reserve the lowest circle of hell for them in his Inferno.
 
-Anyways, a few days later on a 'luxurious afternoon', when the bitterness started to drift away, I decided to give it another attempt - starting from scratch
+Anyway, a few days later on a 'luxurious afternoon', when the bitterness started to drift away, I decided to give it another attempt - starting from scratch.
 
 ---
 
@@ -65,15 +65,18 @@ I learned more from the 3 days I spent failing than from the 15 minutes it took 
 
 There's no good formalization of this process yet.[^4] No best practices that actually feel [*practiced*](https://beyond.addy.ie/). Everyone's figuring it out in real time, and the loudest voices are either celebrating or mocking - rarely [analyzing](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/).
 
-At the end, it's not about model's capabilities. It's about speaking the [instruction language](https://medium.com/@addyosmani/vibe-coding-is-not-the-same-as-ai-assisted-engineering-3f81088d5b98). AI doesn't speak the same English as humans. And as long as the communication gap remains, it will prevent maximal utilization of AI capabilities. (The concept I'm referring to as 'speaking the instruction language' has multiple dimensions - prompt engineering, context engineering and so on)  
+In the end, it's not about the coding agent's capabilities. It's about speaking the [instruction language](https://medium.com/@addyosmani/vibe-coding-is-not-the-same-as-ai-assisted-engineering-3f81088d5b98). AI doesn't speak the same English as humans. And as long as the communication gap remains, it will prevent maximal utilization of AI capabilities. (The concept I'm referring to as 'speaking the instruction language' has multiple dimensions - prompt engineering, context engineering, and so on.)  
 
-In hindsight, another reason my first attempt failed is that the problem space was too open - too many files, too many possible architectures, too much room for the agent to wander. The second attempt worked because I'd already explored the failure modes and could draw tight boundaries. The agent didn't get smarter. I got better at constraining it.
+In hindsight, another reason my first attempt failed is that the problem space was too open - too many files, too many possible architectures, too much room for the agent to wander. The second attempt worked because I had already explored the failure modes and could draw tight boundaries. The agent didn't get smarter. I got better at constraining it.
 
 It'd be interesting to test the limits of vibe-coding (or rather my limits of how well I can speak the instruction language). So far I've only tried this on tech I already know - Python, React, FastAPI. Familiar territory where I can spot when the agent drifts and intervene before things spiral. That familiarity is doing a lot of heavy lifting. What happens when you try this on a completely unknown stack? When you *can't* tell good output from bad? That would push you well past Level 3 into Level 4 or 5 territory - real delegation, not just supervised generation. I'm curious enough to try it. That's probably the next experiment.
 
+Oh I forgot, here's the [github link](https://github.com/Abrar-Abir/alphagenome-viewer)
+
+PS: as you may have noticed, the writing is URL-heavy. This is somewhat intentional; as I have been reading & hearing from different crowds, I wanted to consolidate pieces that I found interesting and/or insightful - both for my future self and the readers.
 ---
 
 [^1]: They announced AlphaGenome last June but the paper just got [published in Nature](https://www.nature.com/articles/s41586-025-10014-0), and - more importantly - the [weights are now public](https://github.com/google-deepmind/alphagenome_research).
-[^2]: This is part of a [broader observation](https://www.fiosgenomics.com/bioinformatics-2025-outlook-thoughts-from-bioinformaticians/): a lot of researchers are not up to date with ML/AI's capabilities and applications in scientific discovery. But that needs a bigger post.
+[^2]: This is part of a [broader observation](https://www.fiosgenomics.com/bioinformatics-2025-outlook-thoughts-from-bioinformaticians/): a lot of researchers are not up to date with ML/AI's capabilities and applications in scientific discovery. But that needs another post.
 [^3]: Somewhere in this process I also needed a logo. Couldn't find an official one on the Google page, so I took an image of alpha, an image of DNA, merged them using the color scheme from the official AlphaGenome page - with the help of Google's Nano banana. Applied Google's Inter font for the text. Since the app is a wrapper on AlphaGenome, I wanted to preserve as much of the official visual identity as I could. The AI-assisted art generation process itself deserves its own entry.
-[^4]: I have a lot more to unpack about vibe coding - what works, what doesn't, why the [discourse is so polarized](https://jeremykreutzbender.com/blog/thoughts-and-experiences-vibe-coding-mid-2025) - but that needs a separate post.
+[^4]: I have a lot more to unpack about vibe coding - what works, what doesn't, why the [discourse is so polarized](https://jeremykreutzbender.com/blog/thoughts-and-experiences-vibe-coding-mid-2025) - but that needs (again) a separate post.
