@@ -193,6 +193,8 @@ collections:
       layout: post
     output: true
     permalink: /:collection/:title/
+  projects:
+    output: false
 
 announcements:
   enabled: true
