@@ -5,7 +5,7 @@ permalink: /art/
 description: A growing collection of unfinished works.
 nav: true
 nav_order: 3
-display_categories: [typography, logo]
+display_categories: [Typography, Logo]
 horizontal: false
 ---
 

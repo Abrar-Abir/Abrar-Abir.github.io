@@ -5,5 +5,5 @@ description: "First work of hetarography / fusion typography (two texts visible 
 img: assets/img/projects/abrar_abir.png
 medium: draw.io, Microsoft Paint | 2025
 importance: 2
-category: typography
+category: Typography
 ---

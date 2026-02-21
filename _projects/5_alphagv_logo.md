@@ -5,5 +5,5 @@ description: "A logo I made for my AlphaGenome Viewer python package (the offici
 img: assets/img/projects/alphagenomeLogo.png
 medium: Nano Banana | 2026
 importance: 1
-category: logo
+category: Logo
 ---

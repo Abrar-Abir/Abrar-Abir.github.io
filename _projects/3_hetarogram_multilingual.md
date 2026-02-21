@@ -5,5 +5,5 @@ description: "Draft sketch of multilingual hetarography ('Abir' in English and '
 img: assets/img/projects/abrar(ar)_abir(en).png
 medium: Vectr.com | 2018
 importance: 3
-category: typography
+category: Typography
 ---

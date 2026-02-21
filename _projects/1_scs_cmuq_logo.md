@@ -5,5 +5,5 @@ description: "Official Logo for School of Computer Science, Carnegie Mellon Univ
 img: assets/img/projects/CSQatarLogo.png
 medium: DALL-E, Microsoft Paint, Python | 2023
 importance: 1
-category: logo
+category: Logo
 ---
