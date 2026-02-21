@@ -21,7 +21,7 @@ social: true # includes social icons at the bottom of the page
 
 In Spring '24, I took an [NLP](https://www.cs.cmu.edu/~ehn/11-611/) course which led to work on two shared tasks ([ArabicNLP '24](https://arxiv.org/abs/2407.01360) & [CLEF '24](https://arxiv.org/abs/2407.10252)). Following the trajectory, I joined [QNRF](http://blogs.qu.edu.qa/cse/tag/qnrf/)-funded collaboration with [CMUQ](https://www.qatar.cmu.edu/news/carnegie-mellon-receives-grants-for-ai-research-into-key-areas-for-qatar/) & [QU](http://qufaculty.qu.edu.qa/telsayed/current_research_projects/) on Automated Essay Scoring for Arabic, contributing to a new dataset ([EACL '26](https://arxiv.org/abs/2512.24235)). 
 
-Since Summer '24, I have collaborated with the Bioinformatics team at [Sidra Medicine](https://www.sidra.org/) to build a full-stack [application](/assets/pdf/SARF-2026-Poster.pdf) - which automates data extraction workflows and supports interactive access to genomic data & [NGS](https://www.illumina.com/science/technology/next-generation-sequencing.html) metadata.
+Since Summer '24, I have been developing a full-stack application for the Genomics Data Science Core at [Sidra Medicine](https://www.sidra.org/)  - which automates data extraction workflows and supports interactive access to genomic data & [NGS](https://www.illumina.com/science/technology/next-generation-sequencing.html) metadata for both research & clinical workflows ([SARF '26]((/assets/pdf/SARF-2026-Poster.pdf))).
 
 In Spring '25, I took a [prompt engineering](https://www.cs.cmu.edu/~breaux/prompting/) course and have since been exploring generative AI — from research prototypes to industry applications.
 
