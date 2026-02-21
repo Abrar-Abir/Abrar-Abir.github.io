@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Generative Terrain Engine
-description: A procedural terrain generation engine that combines Perlin noise with erosion simulation to produce photorealistic landscapes. The engine supports biome-aware generation, where vegetation density, rock formations, and water flow patterns adapt to elevation and climate parameters. Rendered in real time using a custom WebGL pipeline with level-of-detail optimizations for smooth camera traversal across vast open worlds.
+title: Project Gamma
+description: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 img: assets/img/projects/3.jpg
 importance: 3
 category: fun

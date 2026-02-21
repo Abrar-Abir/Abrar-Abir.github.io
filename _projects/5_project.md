@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Rhythm Visualizer
-description: An audio-reactive visualization tool that transforms live music input into dynamic particle systems and geometric patterns. The visualizer performs real-time FFT analysis to decompose audio signals into frequency bands, mapping bass frequencies to large-scale motion and treble to fine-grained particle behavior. Built with p5.js and the Web Audio API, it supports MIDI controller input for live performance tweaking of color palettes, decay rates, and symmetry modes.
+title: Project Epsilon
+description: Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Nam libero tempore, cum soluta nobis est eligendi optio.
 img: assets/img/projects/5.jpg
 importance: 5
 category: fun
