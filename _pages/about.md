@@ -29,5 +29,3 @@ Among [other](https://abrar-abir.github.io/blog/2025/not-sponsored/) things, my 
 
 In my downtime, I tinker with lettering or hang out in the [arxiv](https://arxiv.org/).
 
-`lastname at cmu dot edu`
-
