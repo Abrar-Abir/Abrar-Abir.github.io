@@ -1,11 +1,12 @@
+{% assign modal_id = "project-" | append: project.slug | append: "-modal" %}
+
 <div class="col">
-  <div class="card h-100 hoverable">
+  <div class="card h-100 hoverable" data-toggle="modal" data-target="#{{ modal_id }}" style="cursor: pointer;">
     {% if project.img %}
       {% include figure.liquid loading="eager" path=project.img sizes="250px" alt="project thumbnail" class="card-img-top" %}
     {% endif %}
     <div class="card-body">
       <h2 class="card-title">{{ project.title }}</h2>
-      <p class="card-text">{{ project.description }}</p>
       {% if project.medium %}
         <p class="card-text"><small class="text-muted fst-italic">{{ project.medium }}</small></p>
       {% endif %}
@@ -27,3 +28,22 @@
     </div>
   </div>
 </div>
+
+<!-- Modal (script moves it to body so it's not constrained by grid) -->
+<div class="modal fade project-modal" id="{{ modal_id }}" tabindex="-1" role="dialog" aria-labelledby="{{ modal_id }}-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      {% if project.img %}
+        <img src="{{ project.img | relative_url }}" class="img-fluid" alt="{{ project.title }}">
+      {% endif %}
+      <div class="modal-body">
+        <h5 class="modal-title" id="{{ modal_id }}-label">{{ project.title }}</h5>
+        <p>{{ project.description }}</p>
+        {% if project.medium %}
+          <p class="text-muted fst-italic">{{ project.medium }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>document.body.appendChild(document.getElementById('{{ modal_id }}'));</script>
