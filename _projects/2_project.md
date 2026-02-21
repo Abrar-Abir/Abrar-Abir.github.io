@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Project Beta
-description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-img: assets/img/projects/2.jpg
+title: Hetarogram (abrar | abir)
+description: "[Complete] First successful attempt in hetarography (two texts visible in one glyph - no rotation/mirroring/transformation needed). It reads abrar and abir at the same time (some letters had to be merged into common glyph). draw.io and microsoft paint."
+img: assets/img/projects/abrar_abir.png
 importance: 2
-category: work
+category: typography
 ---

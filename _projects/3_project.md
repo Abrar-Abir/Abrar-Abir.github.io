@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Project Gamma
-description: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+title: Hetarogram (Abir |  أبرار)
+description: "[Draft] First attempt at multilingual hetarography (two texts visible in one glyph - no rotation/mirroring/transformation needed). It reads 'Abir' in English and 'Abrar' in Arabic. The contrast needs some work (red-blue gradient is a failed attempt). vectr.com"
 img: assets/img/projects/3.jpg
 importance: 3
-category: fun
+category: typography
 ---

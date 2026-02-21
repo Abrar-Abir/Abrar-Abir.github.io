@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Project Delta
-description: Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.
-img: assets/img/projects/4.jpg
+title: Ambigram ( ABrAr ABir )
+description: "[Complete] One of my earliest attempts at ambigram - after reading Angels & Demons. Pencil & Whiteboard marker on brown paper."
+img: assets/img/projects/abrarabir_ambigram.png
 importance: 4
-category: work
+category: typography
 ---
