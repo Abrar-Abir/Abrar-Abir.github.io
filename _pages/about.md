@@ -25,7 +25,7 @@ Since Summer '24, I have collaborated with the Bioinformatics team at [Sidra Med
 
 In Spring '25, I took a [prompt engineering](https://www.cs.cmu.edu/~breaux/prompting/) course and have since been exploring generative AI — from research prototypes to industry applications.
 
-Among [other](https://abrar-abir.github.io/blog/2025/not-sponsored/) things, my intellectual curiosity (currently) includes: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
+Among [other](https://abrar-abir.github.io/blog/) things, my intellectual curiosity (currently) includes: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
 
-In my downtime, I tinker with lettering or hang out in the [arxiv](https://arxiv.org/).
+In my downtime, I tinker with [lettering](https://abrar-abir.github.io/art/) or hang out in the [arxiv](https://arxiv.org/).
 
