@@ -2,4 +2,4 @@
 
 Personal academic portfolio site — [abrar-abir.github.io](https://abrar-abir.github.io)
 
-Built with the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme. Licensed under [MIT](LICENSE).
+Powered by [Jekyll](https://jekyllrb.com/) with [al-folio](https://github.com/alshedivat/al-folio) theme. Hosted by [GitHub Pages](https://pages.github.com/). Licensed under [MIT](LICENSE).
