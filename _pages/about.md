@@ -15,7 +15,7 @@ profile:
 news: false # includes a list of news items
 latest_papers: false # includes a list of papers marked as "selected={true}"
 # controlled chaos
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 ---
 ... a Computer Science major at [Carnegie Mellon University in Qatar](https://www.qatar.cmu.edu/) - graduated in Fall '25 - with concentration in [Security & Privacy](https://s3d.cmu.edu/education/undergrad-programs/secpriv/).
 
