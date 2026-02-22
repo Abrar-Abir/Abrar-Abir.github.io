@@ -10,3 +10,4 @@ services:
       - .:/srv/jekyll
     environment:
       - JEKYLL_ENV=development
+    entrypoint: ["bash", "-c", "bundle install --quiet && exec /tmp/entry_point.sh"]

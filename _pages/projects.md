@@ -2,10 +2,10 @@
 layout: page
 title: art
 permalink: /art/
-description: A growing collection of unfinished works.
+description: collection of unfinished works - criticism needed
 nav: true
 nav_order: 3
-display_categories: [Typography, Logo]
+display_categories: [Typography, Not Typography]
 horizontal: false
 ---
 

@@ -5,5 +5,5 @@ description: "Official Logo for Computer Science, Carnegie Mellon University Qat
 img: assets/img/projects/CSQatarLogo.png
 medium: DALL-E, Microsoft Paint, Python (?) | 2023
 importance: 1
-category: Logo
+category: Not Typography
 ---
