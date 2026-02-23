@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS @ CMUQ Logo
-description: "Official Logo for Computer Science, Carnegie Mellon University Qatar - a fusion of Phoenix (connecting with Dragon in SCS CMU Pittsburgh's logo) & Falcon (representing Qatar's heritage) in Carnegie Red (#C41230)"
+description: "Official logo for Computer Science, Carnegie Mellon University Qatar — submitted to the logo design contest and selected. A fusion of Phoenix (nodding to the Dragon in CMU Pittsburgh's [SCS logo](https://www.cs.cmu.edu/~jhclark/logos.htm)) and Falcon (representing Qatar's heritage), in Carnegie Red (#C41230)."
 img: assets/img/projects/CSQatarLogo.png
 medium: DALL-E, Microsoft Paint, Python (?) | 2023
 importance: 1

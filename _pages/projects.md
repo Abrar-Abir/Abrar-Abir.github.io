@@ -2,7 +2,7 @@
 layout: page
 title: art
 permalink: /art/
-description: collection of unfinished works - criticism needed
+description: sampled collection of unpolished works
 nav: true
 nav_order: 3
 display_categories: [Typography, Not Typography]
