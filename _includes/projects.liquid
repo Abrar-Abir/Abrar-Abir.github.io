@@ -8,7 +8,7 @@
     <div class="card-body">
       <h2 class="card-title">{{ project.title }}</h2>
       {% if project.medium %}
-        <p class="card-text"><small class="text-muted fst-italic">{{ project.medium }}</small></p>
+        <p class="card-text"><small class="text-muted fst-italic">{{ project.medium | replace: '|', '&#124;' | markdownify | remove: '<p>' | remove: '</p>' }}</small></p>
       {% endif %}
       <div class="row ml-1 mr-1 p-0">
         {% if project.github %}
@@ -40,7 +40,7 @@
         <h5 class="modal-title" id="{{ modal_id }}-label">{{ project.title }}</h5>
         <p>{{ project.description | markdownify }}</p>
         {% if project.medium %}
-          <p class="text-muted fst-italic">{{ project.medium }}</p>
+          <p class="text-muted fst-italic">{{ project.medium | replace: '|', '&#124;' | markdownify | remove: '<p>' | remove: '</p>' }}</p>
         {% endif %}
       </div>
     </div>
