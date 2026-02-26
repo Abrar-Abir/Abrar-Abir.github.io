@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: I forget who I am
+subtitle: curious
 [//]: <> (<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.)
 
 profile:
