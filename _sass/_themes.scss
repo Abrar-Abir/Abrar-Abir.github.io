@@ -3,12 +3,13 @@
  ******************************************************************************/
 
 :root {
-  --global-bg-color: #{$white-color};
+  --global-font-family: "Courier Prime", "Courier New", Courier, monospace;
+  --global-bg-color: #f4ecd8;
   --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
+  --global-text-color: #3a2f2f;
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$purple-color};
+  --global-theme-color: #8b4513;
+  --global-hover-color: #a0522d;
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
@@ -68,6 +69,7 @@
 }
 
 html[data-theme="dark"] {
+  --global-font-family: "Courier Prime", "Courier New", Courier, monospace;
   --global-bg-color: #{$grey-color-dark};
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};

@@ -4,6 +4,11 @@
 
 // Typography
 
+body {
+  font-family: var(--global-font-family);
+  background-color: var(--global-bg-color);
+}
+
 p,
 h1,
 h2,
