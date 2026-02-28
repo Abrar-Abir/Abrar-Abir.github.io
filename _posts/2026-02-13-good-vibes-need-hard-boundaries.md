@@ -71,9 +71,10 @@ In hindsight, another reason my first attempt failed is that the problem space w
 
 It'd be interesting to test the limits of vibe-coding (or rather my limits of how well I can speak the instruction language). So far I've only tried this on tech I already know - Python, React, FastAPI. Familiar territory where I can spot when the agent drifts and intervene before things spiral. That familiarity is doing a lot of heavy lifting. What happens when you try this on a completely unknown stack? When you *can't* tell good output from bad? That would push you well past Level 3 into Level 4 or 5 territory - real delegation, not just supervised generation. I'm curious enough to try it. That's probably the next experiment.
 
-Oh I forgot, here's the [github link](https://github.com/Abrar-Abir/alphagenome-viewer)
+Oh I forgot, here's the [github link](https://github.com/Abrar-Abir/alphagenome-viewer).
 
 PS: as you may have noticed, the writing is URL-heavy. This is somewhat intentional; as I have been reading & hearing from different crowds, I wanted to consolidate pieces that I found interesting and/or insightful - both for my future self and the readers.
+
 ---
 
 [^1]: They announced AlphaGenome last June but the paper just got [published in Nature](https://www.nature.com/articles/s41586-025-10014-0), and - more importantly - the [weights are now public](https://github.com/google-deepmind/alphagenome_research).
