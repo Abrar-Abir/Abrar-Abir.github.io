@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 5
 cv_pdf: Pause.pdf
-description: It's the button
+description:
 toc:
   sidebar: false
 ---
