@@ -1,13 +1,13 @@
 ---
 layout: none
-permalink: /code/mol/
+permalink: /code/nanoparticle
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Structure Generator</title>
+  <title>Nanoparticle Viewer</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -93,26 +93,44 @@ permalink: /code/mol/
       accent-color: #7eb8f7;
       cursor: pointer;
     }
-    .color-row {
+    .select-row {
       display: flex;
-      gap: 8px;
-      align-items: center;
+      flex-direction: column;
+      gap: 3px;
     }
-    .color-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    .select-row label {
       font-size: 12px;
-      flex: 1;
+      color: #ccc;
     }
-    input[type="color"] {
-      border: 1px solid #2a2a60;
+    select {
       background: #0d0d1f;
-      width: 36px;
-      height: 24px;
+      border: 1px solid #2a2a50;
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-size: 13px;
+      outline: none;
       cursor: pointer;
-      border-radius: 4px;
-      padding: 1px;
+      width: 100%;
+    }
+    select:focus { border-color: #7eb8f7; }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+    }
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    input[type="checkbox"] {
+      accent-color: #7eb8f7;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
     }
     .gen-btn {
       background: #7eb8f7;
@@ -240,90 +258,108 @@ permalink: /code/mol/
 <body>
 
 <div id="sidebar">
-  <h1>3D Structure Generator</h1>
+  <h1>Nanoparticle Viewer</h1>
 
+  <!-- Shape Name -->
   <div class="section">
-    <div class="section-label">Shape Name</div>
-    <input type="text" id="shape-input" placeholder="e.g. pentagonal pyramid" value="pentagonal pyramid" autocomplete="off">
-    <span id="error-msg">Unknown shape — try a preset below.</span>
+    <div class="section-label">Nanoparticle Shape</div>
+    <input type="text" id="shape-input" placeholder="e.g. nanosphere, nanorod, hexagonal prism" value="sphere" autocomplete="off">
+    <span id="error-msg">Unknown shape — try a preset or name below.</span>
     <div class="presets">
-      <span class="preset-btn" onclick="setShape('tetrahedron')">tetrahedron</span>
-      <span class="preset-btn" onclick="setShape('cube')">cube</span>
-      <span class="preset-btn" onclick="setShape('octahedron')">octahedron</span>
-      <span class="preset-btn" onclick="setShape('icosahedron')">icosahedron</span>
-      <span class="preset-btn" onclick="setShape('dodecahedron')">dodecahedron</span>
-      <span class="preset-btn" onclick="setShape('square pyramid')">sq. pyramid</span>
-      <span class="preset-btn" onclick="setShape('pentagonal pyramid')">pent. pyramid</span>
-      <span class="preset-btn" onclick="setShape('hexagonal pyramid')">hex. pyramid</span>
-      <span class="preset-btn" onclick="setShape('triangular prism')">tri. prism</span>
-      <span class="preset-btn" onclick="setShape('hexagonal prism')">hex. prism</span>
-      <span class="preset-btn" onclick="setShape('square antiprism')">sq. antiprism</span>
-      <span class="preset-btn" onclick="setShape('pentagonal bipyramid')">pent. bipyramid</span>
-      <span class="preset-btn" onclick="setShape('benzene')">benzene</span>
-      <span class="preset-btn" onclick="setShape('pentagon')">pentagon</span>
-      <span class="preset-btn" onclick="setShape('hexagon')">hexagon</span>
+      <span class="preset-btn" onclick="applyPreset(PRESETS.nanosphere)">Nanosphere</span>
+      <span class="preset-btn" onclick="applyPreset(PRESETS.nanorod)">Nanorod</span>
     </div>
   </div>
 
-  <hr class="divider">
-
-  <div class="section">
-    <div class="section-label">Bond Length</div>
-    <div class="slider-row">
-      <label>Length <span id="bond-length-val">2.0</span></label>
-      <input type="range" id="bond-length" min="0.5" max="6" step="0.1" value="2.0">
-    </div>
-  </div>
-
-  <div class="section">
+  <!-- Shape Parameters (conditional) -->
+  <div class="section" id="section-shape-params" style="display:none">
     <div class="section-label">Shape Parameters</div>
-    <div class="slider-row">
-      <label>Apex Height Factor <span id="apex-height-val">1.00</span></label>
+    <div class="slider-row" id="row-apex">
+      <label>Apex Height <span id="apex-height-val">1.00</span></label>
       <input type="range" id="apex-height" min="0.1" max="3.0" step="0.05" value="1.0">
     </div>
-    <div class="slider-row">
-      <label>Prism Height Factor <span id="prism-height-val">1.00</span></label>
+    <div class="slider-row" id="row-prism-height">
+      <label>Height <span id="prism-height-val">1.00</span></label>
       <input type="range" id="prism-height" min="0.1" max="3.0" step="0.05" value="1.0">
     </div>
-    <div class="slider-row">
+    <div class="slider-row" id="row-twist">
       <label>Antiprism Twist <span id="twist-val">45°</span></label>
       <input type="range" id="twist" min="0" max="90" step="1" value="45">
     </div>
   </div>
 
+  <!-- Nanorod Parameters (conditional) -->
+  <div class="section" id="section-rod" style="display:none">
+    <div class="section-label">Nanorod Parameters</div>
+    <div class="slider-row">
+      <label>Aspect Ratio <span id="aspect-ratio-val">3.5</span></label>
+      <input type="range" id="aspect-ratio" min="1" max="10" step="0.1" value="3.5">
+    </div>
+    <div class="select-row">
+      <label>Cross-section</label>
+      <select id="cross-section">
+        <option value="circle">Circle</option>
+        <option value="triangle">Triangle</option>
+        <option value="square">Square</option>
+        <option value="pentagon">Pentagon</option>
+        <option value="hex" selected>Hexagonal</option>
+      </select>
+    </div>
+    <div class="toggle-row">
+      <label class="toggle-label">
+        <input type="checkbox" id="tip-style">
+        <span>Capped Tips (Dome / Pyramid)</span>
+      </label>
+    </div>
+    <div class="toggle-row" id="row-transparent">
+      <label class="toggle-label">
+        <input type="checkbox" id="rod-transparent">
+        <span>Transparent</span>
+      </label>
+    </div>
+    <div class="slider-row" id="row-tip-height" style="display:none">
+      <label>Tip Height <span id="tip-height-val">0.6</span></label>
+      <input type="range" id="tip-height" min="0.1" max="2.0" step="0.1" value="0.6">
+    </div>
+  </div>
+
   <hr class="divider">
 
+  <!-- Particle Size -->
   <div class="section">
-    <div class="section-label">Appearance</div>
+    <div class="section-label">Particle</div>
     <div class="slider-row">
-      <label>Atom Radius <span id="atom-radius-val">0.30</span></label>
-      <input type="range" id="atom-radius" min="0.05" max="0.8" step="0.05" value="0.30">
+      <label>Size <span id="particle-size-val">2.0</span></label>
+      <input type="range" id="particle-size" min="0.5" max="5" step="0.1" value="2.0">
     </div>
-    <div class="slider-row">
-      <label>Bond Radius <span id="bond-radius-val">0.08</span></label>
-      <input type="range" id="bond-radius" min="0.02" max="0.25" step="0.01" value="0.08">
+  </div>
+
+  <hr class="divider">
+
+  <!-- Core-Shell -->
+  <div class="section">
+    <div class="section-label">Core-Shell</div>
+    <div class="toggle-row">
+      <label class="toggle-label">
+        <input type="checkbox" id="shell-enabled">
+        <span>Enable Shell Overlay</span>
+      </label>
     </div>
-    <div class="color-row">
-      <div class="color-item">
-        <span>Atoms</span>
-        <input type="color" id="atom-color" value="#4fc3f7">
+    <div id="section-shell-controls" style="display:none; flex-direction:column; gap:6px">
+      <div class="slider-row">
+        <label>Shell Thickness <span id="shell-thickness-val">0.30</span></label>
+        <input type="range" id="shell-thickness" min="0.05" max="1.0" step="0.05" value="0.3">
       </div>
-      <div class="color-item">
-        <span>Bonds</span>
-        <input type="color" id="bond-color" value="#b0bec5">
-      </div>
-    </div>
-    <div class="slider-row">
-      <label>Background <span id="bg-label"></span></label>
-      <div class="color-row" style="margin-top:2px">
-        <input type="color" id="bg-color" value="#12121f" style="width:100%">
+      <div class="slider-row">
+        <label>Shell Opacity <span id="shell-opacity-val">0.35</span></label>
+        <input type="range" id="shell-opacity" min="0.05" max="0.8" step="0.05" value="0.35">
       </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <div id="shape-info">Enter a shape name or click a preset.</div>
+  <div id="shape-info">Click a preset or type a shape name.</div>
 
   <div class="btn-row">
     <button class="gen-btn" onclick="render()">Generate</button>
@@ -336,56 +372,50 @@ permalink: /code/mol/
 <div id="readme-dialog" onclick="if(event.target===this)this.classList.remove('open')">
   <div id="readme-box">
     <div id="readme-header">
-      <span>README — 3D Structure Generator</span>
+      <span>README — Nanoparticle Viewer</span>
       <button id="readme-close" onclick="document.getElementById('readme-dialog').classList.remove('open')">&times;</button>
     </div>
     <div id="readme-body">
-      <h1>3D Structure Generator</h1>
-      <p>Interactive browser-based tool for visualizing geometric 3D structures as ball-and-stick models. No installation required — open <code>index.html</code> in any modern browser.</p>
+      <h1>Nanoparticle Viewer</h1>
+      <p>Interactive browser-based 3D nanoparticle shape visualizer with PBR shading, edge highlights, and core-shell rendering. No installation required — open <code>index.html</code> in any modern browser.</p>
 
       <h2>Usage</h2>
       <ol style="padding-left:18px;margin-bottom:8px">
-        <li>Type a shape name or click a preset</li>
+        <li>Click a preset or type a shape name</li>
         <li>Press <strong>Enter</strong> or click <strong>Generate</strong></li>
-        <li>Adjust sliders and colors live</li>
+        <li>Adjust structural parameters live</li>
       </ol>
       <p><strong>Navigation:</strong> drag to rotate &nbsp;·&nbsp; scroll to zoom &nbsp;·&nbsp; right-drag to pan</p>
 
-      <h2>Supported Shapes</h2>
+      <h2>Shape Types</h2>
       <table>
-        <tr><th>Category</th><th>Examples</th></tr>
-        <tr><td>Platonic solids</td><td><code>tetrahedron</code>, <code>cube</code>, <code>octahedron</code>, <code>icosahedron</code>, <code>dodecahedron</code></td></tr>
-        <tr><td>Pyramids</td><td><code>square pyramid</code>, <code>pentagonal pyramid</code>, any n</td></tr>
-        <tr><td>Bipyramids</td><td><code>triangular bipyramid</code>, <code>pentagonal bipyramid</code></td></tr>
-        <tr><td>Prisms</td><td><code>triangular prism</code>, <code>hexagonal prism</code></td></tr>
-        <tr><td>Antiprisms</td><td><code>square antiprism</code>, <code>pentagonal antiprism</code></td></tr>
-        <tr><td>Flat polygons</td><td><code>pentagon</code>, <code>hexagon</code>, <code>8-gon</code></td></tr>
-        <tr><td>Special</td><td><code>benzene</code>, <code>dimer</code></td></tr>
+        <tr><th>Shape</th><th>Keywords</th><th>Key Parameters</th></tr>
+        <tr><td>Nanosphere</td><td><code>sphere</code>, <code>nanosphere</code></td><td>Size</td></tr>
+        <tr><td>Nanorod</td><td><code>nanorod</code>, <code>rod</code></td><td>Aspect Ratio, Cross-section, Capped Tips, Tip Height</td></tr>
+        <tr><td>Pyramids</td><td><code>square pyramid</code>, <code>pentagonal pyramid</code>, …</td><td>Apex Height</td></tr>
+        <tr><td>Bipyramids</td><td><code>triangular bipyramid</code>, …</td><td>Apex Height</td></tr>
+        <tr><td>Prisms</td><td><code>triangular prism</code>, <code>hexagonal prism</code>, …</td><td>Height</td></tr>
+        <tr><td>Antiprisms</td><td><code>square antiprism</code>, …</td><td>Height, Twist</td></tr>
+        <tr><td>Platonic solids</td><td><code>tetrahedron</code>, <code>octahedron</code>, <code>icosahedron</code>, <code>dodecahedron</code></td><td>Size</td></tr>
       </table>
-      <p>The parser is flexible — <code>5-pyramid</code>, <code>pentagonal-prism</code>, and <code>8 antiprism</code> all work. Any n from 2–20 is accepted.</p>
+      <p>The parser is flexible — <code>5-pyramid</code>, <code>pentagonal-prism</code>, and <code>8 antiprism</code> all work. Any n from 3–20 is accepted.</p>
 
-      <h2>Parameters</h2>
+      <h2>Nanorod Parameters</h2>
       <table>
-        <tr><th>Control</th><th>Effect</th></tr>
-        <tr><td><strong>Bond Length</strong></td><td>Scales all edges uniformly</td></tr>
-        <tr><td><strong>Apex Height Factor</strong></td><td>Stretches/squashes pyramids and bipyramids</td></tr>
-        <tr><td><strong>Prism Height Factor</strong></td><td>Stretches/squashes prisms and antiprisms</td></tr>
-        <tr><td><strong>Antiprism Twist</strong></td><td>Rotates top ring (0° = prism, 45° = regular antiprism)</td></tr>
-        <tr><td><strong>Atom / Bond Radius</strong></td><td>Size of spheres and cylinder thickness</td></tr>
-        <tr><td><strong>Colors</strong></td><td>Atom color, bond color, background color</td></tr>
+        <tr><th>Parameter</th><th>Effect</th></tr>
+        <tr><td><strong>Aspect Ratio</strong></td><td>Length-to-width ratio (1 = equant, 10 = elongated rod)</td></tr>
+        <tr><td><strong>Cross-section</strong></td><td>Circle, Triangle, Square, Pentagon, or Hexagonal body</td></tr>
+        <tr><td><strong>Capped Tips</strong></td><td>Toggle: flat ends (off) or dome/pyramid end caps (on)</td></tr>
+        <tr><td><strong>Tip Height</strong></td><td>Height of cap relative to rod radius (shown when capped)</td></tr>
+        <tr><td><strong>Transparent</strong></td><td>Toggle semi-transparent rendering for the rod body</td></tr>
       </table>
+      <p>Cap shape follows the cross-section: circular rod → hemisphere dome; polygonal rod → matching pyramid.</p>
 
-      <h2>Adding a New Shape</h2>
-      <pre><code>// 1. Write a geometry function
-function myShape(bondLength) {
-  return {
-    vertices: [[x,y,z], ...],
-    edges:    [[i,j], ...]
-  };
-}
+      <h2>Core-Shell</h2>
+      <p>Enables a semi-transparent shell overlay scaled uniformly around the core. Thickness and opacity are adjustable. Useful for modelling ligand shells, silica coatings, or other surface layers.</p>
 
-// 2. Add a match in parseShape()
-if (s === 'my shape') return myShape(bondLength);</code></pre>
+      <h2>Design Philosophy</h2>
+      <p>Only structurally meaningful parameters are exposed as controls. Aesthetic values (colors, material finish) use fixed themed defaults. If a shape is a special case of another (e.g. a nanocube is a square nanorod with AR=1), it is represented as a parameter configuration rather than a separate named shape.</p>
     </div>
   </div>
 </div>
@@ -398,208 +428,212 @@ if (s === 'my shape') return myShape(bondLength);</code></pre>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
 // ============================================================
+// CONSTANTS
+// ============================================================
+
+const CORE_COLOR  = '#c8a96e';  // muted gold, theme-aligned
+const SHELL_COLOR = '#88ccff';  // soft blue shell
+const CORE_METALNESS = 0;
+const CORE_ROUGHNESS = 0.2;
+
+// ============================================================
 // GEOMETRY LIBRARY
 // ============================================================
 
-const PHI = (1 + Math.sqrt(5)) / 2;
-
-// Vertices of a regular n-gon with given bond (edge) length, at height z
-function regularPolygonVerts(n, bondLength, z = 0) {
-  const r = bondLength / (2 * Math.sin(Math.PI / n));
-  return Array.from({ length: n }, (_, i) => {
-    const angle = (2 * Math.PI * i) / n - Math.PI / 2;
-    return [r * Math.cos(angle), r * Math.sin(angle), z];
-  });
+function buildSphereGeometry(size) {
+  return new THREE.SphereGeometry(size * 0.5, 64, 32);
 }
 
-// Edges connecting consecutive vertices of a ring (closed loop)
-function ringEdges(n, offset = 0) {
-  return Array.from({ length: n }, (_, i) => [offset + i, offset + (i + 1) % n]);
+function buildPyramidGeometry(n, size, apexFactor) {
+  const r = size * 0.5;
+  const h = apexFactor * size;
+  return new THREE.CylinderGeometry(0, r, h, n, 1, false);
 }
 
-// n-gon (flat polygon)
-function polygon(n, bondLength) {
-  return { vertices: regularPolygonVerts(n, bondLength), edges: ringEdges(n) };
+function buildBipyramidGeometry(n, size, apexFactor) {
+  const r = size * 0.5;
+  const h = apexFactor * size * 0.5;
+  const positions = [];
+  const indices = [];
+
+  const equator = [];
+  for (let i = 0; i < n; i++) {
+    const a = (2 * Math.PI * i) / n - Math.PI / 2;
+    equator.push(r * Math.cos(a), 0, r * Math.sin(a));
+  }
+
+  for (let i = 0; i < n; i++) {
+    const next = (i + 1) % n;
+    const base = positions.length / 3;
+    positions.push(
+      equator[i*3], equator[i*3+1], equator[i*3+2],
+      equator[next*3], equator[next*3+1], equator[next*3+2],
+      0, h, 0
+    );
+    indices.push(base, base + 1, base + 2);
+  }
+
+  for (let i = 0; i < n; i++) {
+    const next = (i + 1) % n;
+    const base = positions.length / 3;
+    positions.push(
+      equator[i*3], equator[i*3+1], equator[i*3+2],
+      0, -h, 0,
+      equator[next*3], equator[next*3+1], equator[next*3+2]
+    );
+    indices.push(base, base + 1, base + 2);
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geo.setIndex(indices);
+  geo.computeVertexNormals();
+  return geo;
 }
 
-// n-gonal pyramid: n-gon base + apex, all edges = bondLength when apexFactor = sqrt(1 - 1/(2sin(π/n))²) but we allow free apex height
-function pyramid(n, bondLength, apexFactor) {
-  const base = regularPolygonVerts(n, bondLength, 0);
-  const r = bondLength / (2 * Math.sin(Math.PI / n));
-  const apex = [0, 0, apexFactor * r];
-  const vertices = [...base, apex];
-  const edges = [
-    ...ringEdges(n),
-    ...Array.from({ length: n }, (_, i) => [i, n])
-  ];
-  return { vertices, edges };
+function buildPrismGeometry(n, size, heightFactor) {
+  const r = size * 0.5;
+  const h = heightFactor * size;
+  const positions = [];
+  const indices = [];
+
+  for (let i = 0; i < n; i++) {
+    const a = (2 * Math.PI * i) / n - Math.PI / 2;
+    positions.push(r * Math.cos(a), -h / 2, r * Math.sin(a));
+  }
+  for (let i = 0; i < n; i++) {
+    const a = (2 * Math.PI * i) / n - Math.PI / 2;
+    positions.push(r * Math.cos(a), h / 2, r * Math.sin(a));
+  }
+  positions.push(0, -h / 2, 0);
+  positions.push(0,  h / 2, 0);
+
+  const bc = 2 * n, tc = 2 * n + 1;
+  for (let i = 0; i < n; i++) indices.push(bc, (i + 1) % n, i);
+  for (let i = 0; i < n; i++) indices.push(tc, n + i, n + (i + 1) % n);
+  for (let i = 0; i < n; i++) {
+    const a = i, b = (i + 1) % n, c = n + i, d = n + (i + 1) % n;
+    indices.push(a, b, d);
+    indices.push(a, d, c);
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geo.setIndex(indices);
+  geo.computeVertexNormals();
+  return geo;
 }
 
-// n-gonal bipyramid: n-gon equator + top and bottom apices
-function bipyramid(n, bondLength, apexFactor) {
-  const equator = regularPolygonVerts(n, bondLength, 0);
-  const r = bondLength / (2 * Math.sin(Math.PI / n));
-  const h = apexFactor * r;
-  const vertices = [...equator, [0, 0, h], [0, 0, -h]];
-  const top = n, bot = n + 1;
-  const edges = [
-    ...Array.from({ length: n }, (_, i) => [i, top]),
-    ...Array.from({ length: n }, (_, i) => [i, bot])
-  ];
-  return { vertices, edges };
-}
-
-// n-gonal prism: two parallel n-gon rings connected by lateral edges
-function prism(n, bondLength, heightFactor) {
-  const h = heightFactor * bondLength;
-  const bottom = regularPolygonVerts(n, bondLength, -h / 2);
-  const top    = regularPolygonVerts(n, bondLength,  h / 2);
-  const vertices = [...bottom, ...top];
-  const edges = [
-    ...ringEdges(n, 0),
-    ...ringEdges(n, n),
-    ...Array.from({ length: n }, (_, i) => [i, i + n])
-  ];
-  return { vertices, edges };
-}
-
-// n-gonal antiprism: two n-gon rings with a twist, connected by 2n triangles
-function antiprism(n, bondLength, heightFactor, twistDeg) {
-  const h = heightFactor * bondLength;
-  const r = bondLength / (2 * Math.sin(Math.PI / n));
+function buildAntiprismGeometry(n, size, heightFactor, twistDeg) {
+  const r = size * 0.5;
+  const h = heightFactor * size;
   const twist = (twistDeg * Math.PI) / 180;
+  const positions = [];
+  const indices = [];
 
-  const bottom = Array.from({ length: n }, (_, i) => {
+  for (let i = 0; i < n; i++) {
     const a = (2 * Math.PI * i) / n - Math.PI / 2;
-    return [r * Math.cos(a), r * Math.sin(a), -h / 2];
-  });
-  const top = Array.from({ length: n }, (_, i) => {
+    positions.push(r * Math.cos(a), -h / 2, r * Math.sin(a));
+  }
+  for (let i = 0; i < n; i++) {
     const a = (2 * Math.PI * i) / n - Math.PI / 2 + twist;
-    return [r * Math.cos(a), r * Math.sin(a), h / 2];
-  });
+    positions.push(r * Math.cos(a), h / 2, r * Math.sin(a));
+  }
+  positions.push(0, -h / 2, 0);
+  positions.push(0,  h / 2, 0);
 
-  const vertices = [...bottom, ...top];
-  const edges = [
-    ...ringEdges(n, 0),
-    ...ringEdges(n, n),
-    ...Array.from({ length: n }, (_, i) => [i, n + i]),
-    ...Array.from({ length: n }, (_, i) => [i, n + (i + n - 1) % n])
-  ];
-  return { vertices, edges };
+  const bc = 2 * n, tc = 2 * n + 1;
+  for (let i = 0; i < n; i++) indices.push(bc, (i + 1) % n, i);
+  for (let i = 0; i < n; i++) indices.push(tc, n + i, n + (i + 1) % n);
+  for (let i = 0; i < n; i++) {
+    const b0 = i, b1 = (i + 1) % n;
+    const t0 = n + i, t1 = n + (i + 1) % n;
+    indices.push(b0, b1, t1);
+    indices.push(b0, t1, t0);
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geo.setIndex(indices);
+  geo.computeVertexNormals();
+  return geo;
 }
 
-// Tetrahedron (all 4 faces equilateral)
-function tetrahedron(bondLength) {
-  const raw = [[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]];
-  const scale = bondLength / Math.sqrt(8);
-  const vertices = raw.map(v => v.map(x => x * scale));
-  const edges = [[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
-  return { vertices, edges };
+// Cone fan (for pyramid tips) from baseR at baseY to apex at apexY
+function buildConeFan(baseR, segments, baseY, apexY, flip) {
+  const positions = [];
+  const indices = [];
+  for (let i = 0; i < segments; i++) {
+    const a0 = (2 * Math.PI * i) / segments - Math.PI / 2;
+    const a1 = (2 * Math.PI * (i + 1)) / segments - Math.PI / 2;
+    const base = positions.length / 3;
+    positions.push(
+      baseR * Math.cos(a0), baseY, baseR * Math.sin(a0),
+      baseR * Math.cos(a1), baseY, baseR * Math.sin(a1),
+      0, apexY, 0
+    );
+    if (flip) {
+      indices.push(base, base + 2, base + 1);
+    } else {
+      indices.push(base, base + 1, base + 2);
+    }
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geo.setIndex(indices);
+  geo.computeVertexNormals();
+  return geo;
 }
 
-// Cube
-function cube(bondLength) {
-  const h = bondLength / 2;
-  const vertices = [
-    [-h,-h,-h],[h,-h,-h],[h,h,-h],[-h,h,-h],
-    [-h,-h, h],[h,-h, h],[h,h, h],[-h,h, h]
-  ];
-  const edges = [
-    [0,1],[1,2],[2,3],[3,0],
-    [4,5],[5,6],[6,7],[7,4],
-    [0,4],[1,5],[2,6],[3,7]
-  ];
-  return { vertices, edges };
-}
+// Returns array of { geo } parts describing the full nanorod geometry
+function buildNanorodParts({ size, aspectRatio, crossSection, tipStyle, tipHeight }) {
+  const segMap  = { circle: 32, triangle: 3, square: 4, pentagon: 5, hex: 6 };
+  const segs    = segMap[crossSection] || 6;
+  const r       = size * 0.5;
+  const length  = size * aspectRatio;
+  const halfLen = length / 2;
+  const tipH    = tipHeight * r;
+  const hasCap  = tipStyle === 'pyramid';
+  const parts   = [];
 
-// Octahedron
-function octahedron(bondLength) {
-  const r = bondLength / Math.sqrt(2);
-  const vertices = [
-    [r,0,0],[-r,0,0],[0,r,0],[0,-r,0],[0,0,r],[0,0,-r]
-  ];
-  const edges = [
-    [0,2],[0,3],[0,4],[0,5],
-    [1,2],[1,3],[1,4],[1,5],
-    [2,4],[2,5],[3,4],[3,5]
-  ];
-  return { vertices, edges };
-}
+  // ── Body ──────────────────────────────────────────────────
+  if (!hasCap && crossSection === 'square') {
+    // BoxGeometry gives a correctly axis-aligned square cross-section
+    parts.push({ geo: new THREE.BoxGeometry(size, length, size) });
+    return parts;
+  }
 
-// Icosahedron — 12 vertices, 30 edges
-// Vertices: (0, ±1, ±φ) and cyclic permutations. Edge length = 2.
-function icosahedron(bondLength) {
-  const t = PHI;
-  const raw = [
-    [-1, t, 0],[1, t, 0],[-1,-t, 0],[1,-t, 0],
-    [0,-1, t],[0, 1, t],[0,-1,-t],[0, 1,-t],
-    [t, 0,-1],[t, 0, 1],[-t,0,-1],[-t,0, 1]
-  ];
-  const scale = bondLength / 2; // raw edge length = 2
-  const vertices = raw.map(v => v.map(x => x * scale));
-  const edges = [
-    [0,1],[0,5],[0,7],[0,10],[0,11],
-    [1,5],[1,7],[1,8],[1,9],
-    [2,3],[2,4],[2,6],[2,10],[2,11],
-    [3,4],[3,6],[3,8],[3,9],
-    [4,5],[4,9],[4,11],
-    [5,9],[5,11],
-    [6,7],[6,8],[6,10],
-    [7,8],[7,10],
-    [8,9],[10,11]
-  ];
-  return { vertices, edges };
-}
+  parts.push({ geo: new THREE.CylinderGeometry(r, r, length, segs, 1, hasCap) });
 
-// Dodecahedron — 20 vertices, 30 edges. Edge length = 2/φ in unit form.
-function dodecahedron(bondLength) {
-  const t = PHI;
-  const raw = [
-    [ 1, 1, 1],[ 1, 1,-1],[ 1,-1, 1],[ 1,-1,-1],
-    [-1, 1, 1],[-1, 1,-1],[-1,-1, 1],[-1,-1,-1],
-    [0, 1/t, t],[0, 1/t,-t],[0,-1/t, t],[0,-1/t,-t],
-    [1/t, t, 0],[-1/t, t, 0],[1/t,-t, 0],[-1/t,-t, 0],
-    [t, 0, 1/t],[t, 0,-1/t],[-t, 0, 1/t],[-t, 0,-1/t]
-  ];
-  const scale = bondLength / (2 / t); // raw edge length = 2/φ
-  const vertices = raw.map(v => v.map(x => x * scale));
-  const edges = [
-    [0,8],[0,12],[0,16],
-    [1,9],[1,12],[1,17],
-    [2,10],[2,14],[2,16],
-    [3,11],[3,14],[3,17],
-    [4,8],[4,13],[4,18],
-    [5,9],[5,13],[5,19],
-    [6,10],[6,15],[6,18],
-    [7,11],[7,15],[7,19],
-    [8,10],[9,11],[12,13],[14,15],[16,17],[18,19]
-  ];
-  return { vertices, edges };
-}
+  // ── End caps ──────────────────────────────────────────────
+  if (hasCap) {
+    for (const sign of [1, -1]) {
+      const baseY = sign * halfLen;
+      const apexY = sign * (halfLen + tipH);
+      const flip  = sign < 0;
 
-// Benzene — 6-carbon ring with H atoms
-function benzene(bondLength) {
-  const n = 6;
-  const r = bondLength; // hexagon: r = edge length
-  const hLen = bondLength * 0.75;
-  const carbons = Array.from({ length: n }, (_, i) => {
-    const a = (2 * Math.PI * i) / n - Math.PI / 2;
-    return [r * Math.cos(a), r * Math.sin(a), 0];
-  });
-  const hydrogens = carbons.map((c, i) => {
-    const a = (2 * Math.PI * i) / n - Math.PI / 2;
-    return [c[0] + hLen * Math.cos(a), c[1] + hLen * Math.sin(a), 0];
-  });
-  const vertices = [...carbons, ...hydrogens];
-  const edges = [
-    ...ringEdges(n),
-    ...Array.from({ length: n }, (_, i) => [i, n + i])
-  ];
-  return { vertices, edges };
+      if (crossSection === 'circle') {
+        // Hemisphere dome — half-sphere translated to each end
+        const hemi = new THREE.SphereGeometry(r, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+        const pos = hemi.attributes.position;
+        for (let i = 0; i < pos.count; i++) {
+          pos.setY(i, sign > 0 ? pos.getY(i) + halfLen : -(pos.getY(i)) - halfLen);
+        }
+        pos.needsUpdate = true;
+        hemi.computeVertexNormals();
+        parts.push({ geo: hemi });
+      } else {
+        // n-sided pyramid cap
+        parts.push({ geo: buildConeFan(r, segs, baseY, apexY, flip) });
+      }
+    }
+  }
+
+  return parts;
 }
 
 // ============================================================
-// SHAPE PARSER
+// SHAPE PARSER → GEOMETRY FACTORY
 // ============================================================
 
 const N_WORDS = {
@@ -613,38 +647,44 @@ const N_WORDS = {
   'deca': 10, 'decagonal': 10,
 };
 
-function parseShape(input, params) {
+function buildGeometry(input, params) {
   const s = input.trim().toLowerCase().replace(/[-_]/g, ' ');
-  const { bondLength, apexHeight, prismHeight, twist } = params;
+  const { size, apexHeight, prismHeight, twist } = params;
 
-  if (s === 'tetrahedron')  return tetrahedron(bondLength);
-  if (s === 'cube' || s === 'hexahedron') return cube(bondLength);
-  if (s === 'octahedron')   return octahedron(bondLength);
-  if (s === 'icosahedron')  return icosahedron(bondLength);
-  if (s === 'dodecahedron') return dodecahedron(bondLength);
-  if (s === 'benzene')      return benzene(bondLength);
-  if (s === 'dimer' || s === 'line') return { vertices: [[0,0,0],[bondLength,0,0]], edges: [[0,1]] };
+  if (s === 'sphere' || s === 'nanosphere' || s === 'nanosph')
+    return buildSphereGeometry(size);
+  if (s === 'tetrahedron')  return new THREE.TetrahedronGeometry(size * 0.612, 0);
+  if (s === 'octahedron')   return new THREE.OctahedronGeometry(size * 0.612, 0);
+  if (s === 'icosahedron')  return new THREE.IcosahedronGeometry(size * 0.612, 0);
+  if (s === 'dodecahedron') return new THREE.DodecahedronGeometry(size * 0.612, 0);
 
-  // Find n from word
+  // Nanorod is handled separately in render()
+  if (s === 'nanorod' || s === 'rod') return 'nanorod';
+
   let n = null;
   for (const [word, val] of Object.entries(N_WORDS)) {
     if (s.includes(word)) { n = val; break; }
   }
-  // Also try numeric e.g. "5-gon", "8-pyramid"
   if (!n) {
     const m = s.match(/(\d+)/);
     if (m) n = parseInt(m[1]);
   }
 
-  if (n && n >= 2 && n <= 20) {
-    if (s.includes('bipyramid')) return bipyramid(n, bondLength, apexHeight);
-    if (s.includes('antiprism')) return antiprism(n, bondLength, prismHeight, twist);
-    if (s.includes('prism'))     return prism(n, bondLength, prismHeight);
-    if (s.includes('pyramid'))   return pyramid(n, bondLength, apexHeight);
-    if (n >= 3)                  return polygon(n, bondLength);
+  if (n && n >= 3 && n <= 20) {
+    if (s.includes('bipyramid')) return buildBipyramidGeometry(n, size, apexHeight);
+    if (s.includes('antiprism')) return buildAntiprismGeometry(n, size, prismHeight, twist);
+    if (s.includes('prism'))     return buildPrismGeometry(n, size, prismHeight);
+    if (s.includes('pyramid'))   return buildPyramidGeometry(n, size, apexHeight);
   }
 
   return null;
+}
+
+function isSmoothShape(input, crossSection) {
+  const s = input.trim().toLowerCase();
+  if (s === 'sphere' || s === 'nanosphere' || s === 'nanosph') return true;
+  if ((s === 'nanorod' || s === 'rod') && crossSection === 'circle') return true;
+  return false;
 }
 
 // ============================================================
@@ -660,6 +700,9 @@ camera.position.set(0, 4, 10);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
+renderer.outputEncoding = THREE.sRGBEncoding;
 container.appendChild(renderer.domElement);
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -667,19 +710,22 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.06;
 
 // Lights
-scene.add(new THREE.AmbientLight(0xffffff, 0.45));
-const sun = new THREE.DirectionalLight(0xffffff, 0.9);
+scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+const sun = new THREE.DirectionalLight(0xffffff, 1.2);
 sun.position.set(6, 10, 8);
 scene.add(sun);
-const fill = new THREE.DirectionalLight(0x6688cc, 0.35);
+const fill = new THREE.DirectionalLight(0x88aaff, 0.4);
 fill.position.set(-5, -4, -6);
 scene.add(fill);
+const rim = new THREE.DirectionalLight(0xffffff, 0.5);
+rim.position.set(0, -6, -8);
+scene.add(rim);
 
 // Grid
 const grid = new THREE.GridHelper(30, 30, 0x222244, 0x1a1a38);
 scene.add(grid);
 
-// Axes helper (subtle)
+// Axes helper
 const axes = new THREE.AxesHelper(0.6);
 axes.position.y = 0.01;
 scene.add(axes);
@@ -698,78 +744,139 @@ function clearStructure() {
   scene.add(structureGroup);
 }
 
-function createAtom(pos, radius, color) {
-  const geo = new THREE.SphereGeometry(radius, 20, 20);
-  const mat = new THREE.MeshPhongMaterial({ color, shininess: 90, specular: 0x555555 });
+function buildCoreMesh(geo) {
+  const mat = new THREE.MeshStandardMaterial({
+    color: new THREE.Color(CORE_COLOR),
+    metalness: CORE_METALNESS,
+    roughness: CORE_ROUGHNESS,
+  });
   const mesh = new THREE.Mesh(geo, mat);
-  mesh.position.set(...pos);
+  mesh.renderOrder = 0;
   return mesh;
 }
 
-function createBond(v1, v2, radius, color) {
-  const start = new THREE.Vector3(...v1);
-  const end   = new THREE.Vector3(...v2);
-  const dir   = new THREE.Vector3().subVectors(end, start);
-  const len   = dir.length();
-  const mid   = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+function buildEdgesOverlay(geo) {
+  const edges = new THREE.EdgesGeometry(geo, 15);
+  const mat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.35 });
+  return new THREE.LineSegments(edges, mat);
+}
 
-  const geo = new THREE.CylinderGeometry(radius, radius, len, 10, 1);
-  const mat = new THREE.MeshPhongMaterial({ color, shininess: 50 });
-  const mesh = new THREE.Mesh(geo, mat);
-  mesh.position.copy(mid);
-  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.normalize());
+function buildShellMesh(geo, thickness, opacity) {
+  const mat = new THREE.MeshStandardMaterial({
+    color: new THREE.Color(SHELL_COLOR),
+    metalness: 0.1,
+    roughness: 0.4,
+    transparent: true,
+    opacity,
+    side: THREE.FrontSide,
+    depthWrite: false,
+  });
+  const mesh = new THREE.Mesh(geo.clone(), mat);
+  mesh.scale.setScalar(1 + thickness);
+  mesh.renderOrder = 1;
   return mesh;
 }
 
 function render() {
-  const input      = document.getElementById('shape-input').value;
-  const bondLength = parseFloat(document.getElementById('bond-length').value);
-  const apexHeight = parseFloat(document.getElementById('apex-height').value);
-  const prismHeight= parseFloat(document.getElementById('prism-height').value);
-  const twist      = parseFloat(document.getElementById('twist').value);
-  const atomRadius = parseFloat(document.getElementById('atom-radius').value);
-  const bondRadius = parseFloat(document.getElementById('bond-radius').value);
-  const atomColor  = document.getElementById('atom-color').value;
-  const bondColor  = document.getElementById('bond-color').value;
+  const input        = document.getElementById('shape-input').value.trim();
+  const size         = parseFloat(document.getElementById('particle-size').value);
+  const apexHeight   = parseFloat(document.getElementById('apex-height').value);
+  const prismHeight  = parseFloat(document.getElementById('prism-height').value);
+  const twist        = parseFloat(document.getElementById('twist').value);
+  const shellEnabled = document.getElementById('shell-enabled').checked;
+  const shellThick   = parseFloat(document.getElementById('shell-thickness').value);
+  const shellOpacity = parseFloat(document.getElementById('shell-opacity').value);
+  const aspectRatio    = parseFloat(document.getElementById('aspect-ratio').value);
+  const crossSection   = document.getElementById('cross-section').value;
+  const tipStyle       = document.getElementById('tip-style').checked ? 'pyramid' : 'flat';
+  const tipHeight      = parseFloat(document.getElementById('tip-height').value);
+  const rodTransparent = document.getElementById('rod-transparent').checked;
 
-  const shape = parseShape(input, { bondLength, apexHeight, prismHeight, twist });
-  const err   = document.getElementById('error-msg');
-  const info  = document.getElementById('shape-info');
+  const err  = document.getElementById('error-msg');
+  const info = document.getElementById('shape-info');
 
-  if (!shape) {
+  const params = { size, apexHeight, prismHeight, twist, aspectRatio, crossSection, tipStyle, tipHeight };
+  const geoResult = buildGeometry(input, params);
+
+  if (!geoResult) {
     err.style.display = 'block';
-    info.innerHTML = `<span style="color:#f07070">Could not parse "<em>${input}</em>".<br>Try presets or names like "hexagonal prism", "square antiprism".</span>`;
+    info.innerHTML = `<span style="color:#f07070">Unknown shape "<em>${input}</em>".<br>` +
+      `Try: nanosphere, nanorod, icosahedron, hexagonal prism…</span>`;
+    updateUIVisibility();
     return;
   }
 
   err.style.display = 'none';
-
-  // Compute centroid and re-center
-  const cx = shape.vertices.reduce((s, v) => s + v[0], 0) / shape.vertices.length;
-  const cy = shape.vertices.reduce((s, v) => s + v[1], 0) / shape.vertices.length;
-  const cz = shape.vertices.reduce((s, v) => s + v[2], 0) / shape.vertices.length;
-  const verts = shape.vertices.map(v => [v[0]-cx, v[1]-cy, v[2]-cz]);
-
-  // Compute actual edge lengths (for info display)
-  const edgeLens = shape.edges.map(([i,j]) => {
-    const a = verts[i], b = verts[j];
-    return Math.sqrt((a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2);
-  });
-  const minLen = Math.min(...edgeLens).toFixed(2);
-  const maxLen = Math.max(...edgeLens).toFixed(2);
-
-  info.innerHTML = `<strong>${input}</strong><br>` +
-    `${verts.length} vertices &nbsp;·&nbsp; ${shape.edges.length} edges<br>` +
-    `Edge length: ${minLen === maxLen ? minLen : minLen + ' – ' + maxLen}`;
-
   clearStructure();
 
-  for (const v of verts) {
-    structureGroup.add(createAtom(v, atomRadius, atomColor));
+  if (geoResult === 'nanorod') {
+    // Nanorod: multi-part geometry (body + optional caps)
+    const smooth = crossSection === 'circle';
+    const parts = buildNanorodParts(params);
+
+    for (const { geo } of parts) {
+      const mat = new THREE.MeshStandardMaterial({
+        color: new THREE.Color(CORE_COLOR),
+        metalness: CORE_METALNESS,
+        roughness: CORE_ROUGHNESS,
+        transparent: rodTransparent,
+        opacity: rodTransparent ? 0.3 : 1.0,
+        depthWrite: !rodTransparent,
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.renderOrder = 0;
+      structureGroup.add(mesh);
+
+      if (!smooth) {
+        structureGroup.add(buildEdgesOverlay(geo));
+      }
+      if (shellEnabled) {
+        structureGroup.add(buildShellMesh(geo, shellThick, shellOpacity));
+      }
+    }
+
+    const hasCap = tipStyle === 'pyramid';
+    info.innerHTML = `<strong>${input}</strong><br>` +
+      `AR: ${aspectRatio.toFixed(1)} · ${crossSection}` +
+      (hasCap ? ` · capped ×${tipHeight.toFixed(1)}` : '') +
+      (rodTransparent ? ' · transparent' : '') +
+      (shellEnabled ? `<br>Shell: ×${(1 + shellThick).toFixed(2)}, opacity ${shellOpacity.toFixed(2)}` : '');
+  } else {
+    // Standard single-geometry shapes
+    const geo = geoResult;
+    const coreMesh = buildCoreMesh(geo);
+    structureGroup.add(coreMesh);
+
+    if (!isSmoothShape(input, crossSection)) {
+      structureGroup.add(buildEdgesOverlay(geo));
+    }
+    if (shellEnabled) {
+      structureGroup.add(buildShellMesh(geo, shellThick, shellOpacity));
+    }
+
+    info.innerHTML = `<strong>${input}</strong><br>Size: ${size.toFixed(1)}` +
+      (shellEnabled ? `<br>Shell: ×${(1 + shellThick).toFixed(2)}, opacity ${shellOpacity.toFixed(2)}` : '');
   }
-  for (const [i, j] of shape.edges) {
-    structureGroup.add(createBond(verts[i], verts[j], bondRadius, bondColor));
-  }
+
+  updateUIVisibility();
+}
+
+function updateUIVisibility() {
+  const s        = document.getElementById('shape-input').value.trim().toLowerCase().replace(/[-_]/g, ' ');
+  const isRod    = s.includes('rod');
+  const hasApex  = s.includes('pyramid') || s.includes('bipyramid');
+  const hasPrism = s.includes('prism') || s.includes('antiprism');
+  const hasTwist = s.includes('antiprism');
+  const shellOn  = document.getElementById('shell-enabled').checked;
+  const hasCap = document.getElementById('tip-style').checked;
+
+  document.getElementById('section-rod').style.display          = isRod              ? 'flex' : 'none';
+  document.getElementById('section-shape-params').style.display = (hasApex || hasPrism) ? 'flex' : 'none';
+  document.getElementById('row-apex').style.display             = hasApex            ? 'flex' : 'none';
+  document.getElementById('row-prism-height').style.display     = hasPrism           ? 'flex' : 'none';
+  document.getElementById('row-twist').style.display            = hasTwist           ? 'flex' : 'none';
+  document.getElementById('section-shell-controls').style.display = shellOn          ? 'flex' : 'none';
+  document.getElementById('row-tip-height').style.display       = (isRod && hasCap)  ? 'flex' : 'none';
 }
 
 function resetCamera() {
@@ -778,19 +885,52 @@ function resetCamera() {
   controls.update();
 }
 
-function setShape(name) {
-  document.getElementById('shape-input').value = name;
+// ============================================================
+// PRESETS
+// ============================================================
+
+const PRESETS = {
+  nanosphere: {
+    shape: 'sphere', size: 2.0,
+  },
+  nanorod: {
+    shape: 'nanorod', size: 2.0,
+    aspectRatio: 3.5, crossSection: 'hex', tipStyle: 'flat',
+  },
+};
+
+function applyPreset(preset) {
+  document.getElementById('shape-input').value = preset.shape;
+  if (preset.size         !== undefined) document.getElementById('particle-size').value   = preset.size;
+  if (preset.aspectRatio  !== undefined) document.getElementById('aspect-ratio').value    = preset.aspectRatio;
+  if (preset.crossSection !== undefined) document.getElementById('cross-section').value   = preset.crossSection;
+  if (preset.tipStyle     !== undefined) document.getElementById('tip-style').checked     = preset.tipStyle === 'pyramid';
+  if (preset.tipHeight    !== undefined) document.getElementById('tip-height').value      = preset.tipHeight;
+
+  // Sync display spans
+  document.getElementById('particle-size-val').textContent =
+    parseFloat(document.getElementById('particle-size').value).toFixed(1);
+  document.getElementById('aspect-ratio-val').textContent =
+    parseFloat(document.getElementById('aspect-ratio').value).toFixed(1);
+  document.getElementById('tip-height-val').textContent =
+    parseFloat(document.getElementById('tip-height').value).toFixed(1);
+
   render();
 }
 
-// Slider bindings
+// ============================================================
+// EVENT BINDINGS
+// ============================================================
+
 const sliderDefs = [
-  ['bond-length',  'bond-length-val',  v => v],
-  ['apex-height',  'apex-height-val',  v => parseFloat(v).toFixed(2)],
-  ['prism-height', 'prism-height-val', v => parseFloat(v).toFixed(2)],
-  ['twist',        'twist-val',        v => v + '°'],
-  ['atom-radius',  'atom-radius-val',  v => parseFloat(v).toFixed(2)],
-  ['bond-radius',  'bond-radius-val',  v => parseFloat(v).toFixed(2)],
+  ['particle-size',   'particle-size-val',   v => parseFloat(v).toFixed(1)],
+  ['apex-height',     'apex-height-val',     v => parseFloat(v).toFixed(2)],
+  ['prism-height',    'prism-height-val',    v => parseFloat(v).toFixed(2)],
+  ['twist',           'twist-val',           v => v + '°'],
+  ['aspect-ratio',    'aspect-ratio-val',    v => parseFloat(v).toFixed(1)],
+  ['tip-height',      'tip-height-val',      v => parseFloat(v).toFixed(1)],
+  ['shell-thickness', 'shell-thickness-val', v => parseFloat(v).toFixed(2)],
+  ['shell-opacity',   'shell-opacity-val',   v => parseFloat(v).toFixed(2)],
 ];
 
 for (const [id, valId, fmt] of sliderDefs) {
@@ -799,15 +939,14 @@ for (const [id, valId, fmt] of sliderDefs) {
   el.addEventListener('input', () => { val.textContent = fmt(el.value); render(); });
 }
 
-document.getElementById('atom-color').addEventListener('input', render);
-document.getElementById('bond-color').addEventListener('input', render);
-document.getElementById('bg-color').addEventListener('input', e => {
-  scene.background = new THREE.Color(e.target.value);
-});
-
+document.getElementById('cross-section').addEventListener('change', render);
+document.getElementById('tip-style').addEventListener('change', () => { updateUIVisibility(); render(); });
+document.getElementById('rod-transparent').addEventListener('change', render);
+document.getElementById('shell-enabled').addEventListener('change', () => { updateUIVisibility(); render(); });
 document.getElementById('shape-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') { e.preventDefault(); render(); }
 });
+document.getElementById('shape-input').addEventListener('input', updateUIVisibility);
 
 // Resize handler
 function onResize() {
@@ -827,7 +966,7 @@ onResize();
 })();
 
 // Initial render
-render();
+applyPreset(PRESETS.nanosphere);
 </script>
 </body>
 </html>

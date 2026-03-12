@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: love connecting the dots
+subtitle: connecting dots & crossing lines
 [//]: <> (<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.)
 
 profile:
@@ -27,5 +27,5 @@ Since Summer '24, I have been developing a full-stack application for the Genomi
 
 Among [other](https://abrar-abir.github.io/blog/) things, my intellectual curiosity (currently) includes: bio-inspired ML architectures, AI for formal verification & mechanistic interpretability for LLMs.
 
-In my downtime, I tinker with [lettering](https://abrar-abir.github.io/art/) or hang out in the [arxiv](https://arxiv.org/).
+In my downtime, I tinker with [lettering](https://abrar-abir.github.io/art/) or hang out in the arxiv.
 
