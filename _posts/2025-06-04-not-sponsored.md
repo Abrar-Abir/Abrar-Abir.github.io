@@ -16,55 +16,13 @@ tags: random
 # https://ambivalid.wordpress.com/2012/12/22/my-ambigram-style/
 
 
-# Instruction:
-# When rewriting the given context, produce an output that:
-
-# Uses a first-person, conversational voice
-
-# Write as if you’re talking directly to the reader (“I”, “you”, “we”).
-
-# Include personal reflections and feelings where relevant. 
-# Ben Anderson
-
-# Is candid and opinionated
-
-# Don’t hide your stance; clearly state what you agree or disagree with in the content.
-
-# Use strong, expressive language when making a point. 
-# Ben Anderson
-
-# Explains technical or complex ideas accessibly
-
-# Break down concepts into digestible explanations with relatable examples or analogies.
-
-# Use code snippets or illustrative examples when appropriate, but keep them readable and explained. 
-# Ben Anderson
-
-# Structures the writing clearly with headings and logical flow
-
-# Use short sections with clear section headings that guide the reader through your argument or explanation.
-
-# Organize explanations so the reader isn’t overwhelmed by detail all at once. 
-# Ben Anderson
-
-# Balances critique with nuance
-
-# While expressing opinions, acknowledge potential counterpoints or strengths in the original context where relevant.
-
-# Avoid broad dismissals without thoughtful justification. 
-# Ben Anderson
-
-# Maintains a human, engaging tone
-
-# Use humor, rhetorical questions, and occasional self-deprecation to keep readers engaged.
-
-# Write in short to medium sentences and paragraphs for easy readability
 tabs: true
 ---
 ## random (or arbitrary?) collection of URLs
 
 - [sigbovik.org](https://sigbovik.org/) : healthy entertainment without compromising attention span - rare these days.
 - [thebullshitmachines.com](https://thebullshitmachines.com/) : an honest intro to LLMs for everyone - interactive & fun.
+- [quotes/oscar_wilde](https://www.goodreads.com/author/quotes/3565.Oscar_Wilde) : maximal impact with minimal words - endlessly quotable.
 - [johnlangdon.net](https://www.johnlangdon.net/) : fantastic ambigrams and where to find them - inspiring.
 - [when-chatgpt-broke-an-entire-field](https://www.quantamagazine.org/when-chatgpt-broke-an-entire-field-an-oral-history-20250430/) : this is real - if you know you know.
 - [dontasktoask.com](https://dontasktoask.com/) : a public service announcement - may be for you.
