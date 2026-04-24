@@ -1,13 +1,20 @@
 # ---
-# layout: post
-# title: Not sponsored
-# date: 2025-06-04 00:32:13
-# description: random (or arbitrary?) collection of URLs
-# tags: random
-# # categories: sample-posts
-# tabs: true
-# ---
 
+# layout: post
+
+# title: Not sponsored
+
+# date: 2025-06-04 00:32:13
+
+# description: random (or arbitrary?) collection of URLs
+
+# tags: random
+
+# # categories: sample-posts
+
+# tabs: true
+
+# ---
 
 The logo features a bold red phoenix enclosed in a partially open circle, representing the spirit and identity of the Computer Science program at Carnegie Mellon University in Qatar (CMUQ). The phoenix, a mythical bird known for rising from its own ashes, symbolizes resilience, renewal, and continuous transformation—qualities that are deeply aligned with the nature of computer science as a discipline. It captures the innovation, adaptability, and problem-solving ethos that define the field, as well as the growth and evolution of the CS community at CMUQ.
 
@@ -17,7 +24,7 @@ Importantly, the design subtly incorporates local context by evoking the shape o
 
 # Expecto Signum: Fawkes and the Flame
 
-*On the art of visual storytelling and the delicate dance between symbol and meaning*
+_On the art of visual storytelling and the delicate dance between symbol and meaning_
 
 When the call came out for a new logo for Carnegie Mellon's Computer Science program in Qatar, I found myself staring at a fascinating design challenge—one that would require weaving together three distinct narrative threads into a single, coherent visual statement. Like any worthwhile design problem, it wasn't just about making something that looked good. It was about creating a symbol that could carry the weight of identity, aspiration, and belonging.
 
@@ -60,52 +67,52 @@ In the end, effective logo design isn't about creating pretty pictures—it's ab
 Sometimes the best logos are the ones that surprise even their creators with how much story they can tell in a single, elegant form. This phoenix, I believe, has stories yet to tell.
 
 # Expecto Sigilum : An accidental Spell
-*Confession of conjuring Flaco Ignis - the SCS@CMUQ logo*
-*On the Unexpected Emergence of Flaco Ignis – SCS@CMUQ’s Iconic Mark*
 
-	12 Feb 2023, 13:15
+_Confession of conjuring Flaco Ignis - the SCS@CMUQ logo_
+_On the Unexpected Emergence of Flaco Ignis – SCS@CMUQ’s Iconic Mark_
 
-
-	To: All current and past members of the CS community at CMUQ
-
-	Dear all,
+    12 Feb 2023, 13:15
 
 
-	The CS program on this campus has no logo of its own. Are you interested in designing one? If so, please read on!
+    To: All current and past members of the CS community at CMUQ
 
-	We are looking for a logo for our local CS program. We could use the old School of Computer Science logo from the main campus, the famous dragon:
-
-
-	but we would much prefer something that represents all three elements of our identity: Computer Science, Carnegie Mellon, Qatar. In search of that, we are launching a contest! If you have a good idea, please submit it. Who knows? Maybe you are destined to be the proud parent of the new SCS@CMUQ logo!
-
-	Who can submit: Any current or past member (student, faculty, staff) of the CS community at CMUQ.
-
-	When to submit: The deadline is March 5, 2023
-
-	What to submit: Two mandatory items:
-
-	A digital file containing your design - must be up to 5MB.
-
-	A short paragraph justifying why your design makes sense - must be up to 500 words.
-
-	What next? A committee of 2 faculty, 2 students, 2 staff, and 1 MPR member (none of whom participate in the contest) will review the submissions and select up to 3 winners. If 0 winners are selected, the new logo will be the dragon. If 2 or 3 winners are selected, then the final winner will be selected by polling the community.
-
-	...
+    Dear all,
 
 
-	I am not a graphic designer or illustrator of any sort. but when I received the email, I thoguht to myself, it'd be nice if I could design a logo. 
-	Time passed, I almost forgot. Once I was clearing out my inbox to take a break from my coding sessions [this is one of those things like clening my  room when I have something due but I dont feel like working, so I decide to do something that is way out of my comfort zone instead - if you know]. And I was looking at that email again. I couldnt shake off the temptation to just try and see how far it goes - cause there will be voting to choose the best logo. I wanted to submit one just to see where it would stand. Again, i'm not a graphic designer/illustrator, so I dont know to use photoshop or anything. I spent a couple hours in total. brainstorming, using google image search, microsoft photos [to crop and edit images] and microsoft paint to put overlaps of cropped peices. At hte end, of course it was looking horrible, and I wanted something simple - monochromatic. So, at the end, I run a python code to color all the non-white part of the image to cmu red color - usually you'd vector trace the outline and then fill, but again i'm not an illustrator.  
+    The CS program on this campus has no logo of its own. Are you interested in designing one? If so, please read on!
 
+    We are looking for a logo for our local CS program. We could use the old School of Computer Science logo from the main campus, the famous dragon:
+
+
+    but we would much prefer something that represents all three elements of our identity: Computer Science, Carnegie Mellon, Qatar. In search of that, we are launching a contest! If you have a good idea, please submit it. Who knows? Maybe you are destined to be the proud parent of the new SCS@CMUQ logo!
+
+    Who can submit: Any current or past member (student, faculty, staff) of the CS community at CMUQ.
+
+    When to submit: The deadline is March 5, 2023
+
+    What to submit: Two mandatory items:
+
+    A digital file containing your design - must be up to 5MB.
+
+    A short paragraph justifying why your design makes sense - must be up to 500 words.
+
+    What next? A committee of 2 faculty, 2 students, 2 staff, and 1 MPR member (none of whom participate in the contest) will review the submissions and select up to 3 winners. If 0 winners are selected, the new logo will be the dragon. If 2 or 3 winners are selected, then the final winner will be selected by polling the community.
+
+    ...
+
+
+    I am not a graphic designer or illustrator of any sort. but when I received the email, I thoguht to myself, it'd be nice if I could design a logo.
+    Time passed, I almost forgot. Once I was clearing out my inbox to take a break from my coding sessions [this is one of those things like clening my  room when I have something due but I dont feel like working, so I decide to do something that is way out of my comfort zone instead - if you know]. And I was looking at that email again. I couldnt shake off the temptation to just try and see how far it goes - cause there will be voting to choose the best logo. I wanted to submit one just to see where it would stand. Again, i'm not a graphic designer/illustrator, so I dont know to use photoshop or anything. I spent a couple hours in total. brainstorming, using google image search, microsoft photos [to crop and edit images] and microsoft paint to put overlaps of cropped peices. At hte end, of course it was looking horrible, and I wanted something simple - monochromatic. So, at the end, I run a python code to color all the non-white part of the image to cmu red color - usually you'd vector trace the outline and then fill, but again i'm not an illustrator.
 
 Let me start with a disclaimer: I am not a graphic designer. I can barely navigate beyond drag-and-drop tools - can't even get past the splash screen of professional illustration software. So when that email landed in my inbox asking for logo submissions for CMUQ's Computer Science program, my first thought was "well, that's not for me" followed immediately by filing it away in the digital equivalent of "maybe later."
 
 Time passed. I almost forgot about it entirely.
 
--------
+---
 
 You know that feeling when you have a coding assignment due and suddenly cleaning your room becomes the most urgent task in the world? That's exactly where I was when I found myself excavating my inbox during what was supposed to be a study break. There it was again—that logo contest email, staring at me like an interesting puzzle I'd left unsolved.
 
-I couldn't shake the thought: *What if I just tried?* 
+I couldn't shake the thought: _What if I just tried?_
 
 There was something irresistibly appealing about the challenge. Here was a problem with constraints—represent Computer Science, Carnegie Mellon, and Qatar in one cohesive design—and as any CS student knows, constraints make problems interesting. Plus, there would be voting. I was curious to see where a complete amateur's attempt would land in the rankings.
 
@@ -114,6 +121,7 @@ So I did what any reasonable person would do: I opened Microsoft Paint.
 ---
 
 My design arsenal was, shall we say, unconventional:
+
 - Google Image Search (for "research")
 - Microsoft Photos (for cropping)
 - Microsoft Paint (for everything else)
@@ -165,4 +173,4 @@ But maybe that's the most CS thing about this whole story. In programming, elega
 
 The Phoenix logo might not have been born from traditional design expertise, but it was created with the same iterative, problem-solving spirit that defines computer science itself. And in the end, maybe that's the most fitting origin story a CS program logo could have.
 
-*Sometimes the best way to represent your field is to embody its core principles, even when you're way out of your depth.*
+_Sometimes the best way to represent your field is to embody its core principles, even when you're way out of your depth._
