@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib import request, error
 
@@ -21,7 +21,6 @@ HEADERS = {
     "Accept": "application/json",
 }
 OUT_PATH = Path(__file__).resolve().parent.parent / "assets" / "data" / "chess_stats.json"
-MONTHS_BACK = 12
 
 
 def get_json(url: str, retries: int = 3) -> dict | None:
@@ -40,42 +39,64 @@ def get_json(url: str, retries: int = 3) -> dict | None:
     return None
 
 
-def end_of_month_rapid_rating(archive_url: str) -> int | None:
+def archive_rapid_summary(archive_url: str) -> tuple[int | None, set[str]]:
+    """Return (end-of-month rapid rating, set of UTC date strings with a rapid game)."""
     data = get_json(archive_url)
     if not data:
-        return None
+        return None, set()
     games = data.get("games", [])
-    for g in reversed(games):
+    rapid_dates: set[str] = set()
+    last_rating: int | None = None
+    for g in games:
         if g.get("time_class") != "rapid":
             continue
-
+        end_time = g.get("end_time")
+        if end_time:
+            day = datetime.fromtimestamp(end_time, tz=timezone.utc).strftime("%Y-%m-%d")
+            rapid_dates.add(day)
         white = g.get("white", {})
         black = g.get("black", {})
         if white.get("username", "").lower() == USERNAME.lower():
-            return white.get("rating")
-        if black.get("username", "").lower() == USERNAME.lower():
-            return black.get("rating")
-    return None
+            last_rating = white.get("rating")
+        elif black.get("username", "").lower() == USERNAME.lower():
+            last_rating = black.get("rating")
+    return last_rating, rapid_dates
+
+
+def compute_streak(dates: set[str]) -> int:
+    """Consecutive UTC days with a rapid game, ending today or yesterday."""
+    if not dates:
+        return 0
+    today = datetime.now(timezone.utc).date()
+    cursor = today if today.strftime("%Y-%m-%d") in dates else today - timedelta(days=1)
+    streak = 0
+    while cursor.strftime("%Y-%m-%d") in dates:
+        streak += 1
+        cursor -= timedelta(days=1)
+    return streak
 
 
 def main() -> int:
     profile = get_json(BASE) or {}
     stats = get_json(f"{BASE}/stats") or {}
     archives = (get_json(f"{BASE}/games/archives") or {}).get("archives", [])
-    archives = archives[-MONTHS_BACK:]
 
     country_url = profile.get("country") or ""
     country_code = country_url.rstrip("/").split("/")[-1] if country_url else None
 
     rapid_history: list[dict] = []
+    all_rapid_dates: set[str] = set()
     for url in archives:
         # archive URLs end in /YYYY/MM
         parts = url.rstrip("/").split("/")
         month_label = f"{parts[-2]}-{parts[-1]}"
-        rating = end_of_month_rapid_rating(url)
+        rating, dates = archive_rapid_summary(url)
+        all_rapid_dates |= dates
         if rating is not None:
             rapid_history.append({"month": month_label, "rating": rating})
         time.sleep(0.5)  # be polite
+
+    streak_days = compute_streak(all_rapid_dates)
 
     out = {
         "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -91,6 +112,7 @@ def main() -> int:
         },
         "stats": {
             "chess_rapid": stats.get("chess_rapid"),
+            "rapid_streak_days": streak_days,
         },
         "rating_history": {
             "rapid": rapid_history,
