@@ -7,6 +7,7 @@ requests with HTTP 429 even from the same IP.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 from datetime import datetime, timezone, timedelta
@@ -63,6 +64,20 @@ def archive_rapid_summary(archive_url: str) -> tuple[int | None, set[str]]:
     return last_rating, rapid_dates
 
 
+def scrape_streak(username: str) -> int | None:
+    """Fetch chess.com member profile page and extract the official streak count."""
+    url = f"https://www.chess.com/member/{username}"
+    try:
+        req = request.Request(url, headers={**HEADERS, "Accept": "text/html"})
+        with request.urlopen(req, timeout=30) as resp:
+            html = resp.read().decode("utf-8", errors="replace")
+        m = re.search(r"streakCount:\s*(\d+)", html)
+        return int(m.group(1)) if m else None
+    except Exception as e:
+        print(f"streak scrape failed: {e}", file=sys.stderr)
+        return None
+
+
 def compute_streak(dates: set[str]) -> int:
     """Consecutive UTC days with a rapid game, ending today or yesterday."""
     if not dates:
@@ -97,6 +112,7 @@ def main() -> int:
         time.sleep(0.5)  # be polite
 
     streak_days = compute_streak(all_rapid_dates)
+    chess_com_streak = scrape_streak(USERNAME)
 
     out = {
         "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -113,6 +129,7 @@ def main() -> int:
         "stats": {
             "chess_rapid": stats.get("chess_rapid"),
             "rapid_streak_days": streak_days,
+            "chess_com_streak_days": chess_com_streak,
         },
         "rating_history": {
             "rapid": rapid_history,
