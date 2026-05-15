@@ -77,7 +77,7 @@ chart:
       const p = data.profile || {};
       const s = data.stats || {};
       const r = s.chess_rapid || null;
-      const streak = s.rapid_streak_days;
+      const streak = (s.chess_com_streak_days != null) ? s.chess_com_streak_days : s.rapid_streak_days;
       const history = ((data.rating_history || {}).rapid) || [];
 
       const hasData = data.fetched_at && (p.username || r);
@@ -90,16 +90,14 @@ chart:
       const titleBadge = p.title ? '<strong style="color:#b71c1c;">' + p.title + '</strong> ' : '';
 
       let cardHtml = "";
+      let total = 0;
       if (r && r.last) {
         const w = (r.record && r.record.win) || 0;
         const l = (r.record && r.record.loss) || 0;
         const d = (r.record && r.record.draw) || 0;
-        const total = w + l + d;
+        total = w + l + d;
         const winRate = pct(w, total);
         const best = (r.best && r.best.rating) || "—";
-        const streakRow = (typeof streak === "number")
-          ? '<div class="chess-stat-row"><span>streak</span><span>' + streak + ' day' + (streak === 1 ? '' : 's') + '</span></div>'
-          : '';
         cardHtml = '' +
           '<div class="chess-card">' +
           '<h3>rapid</h3>' +
@@ -112,17 +110,23 @@ chart:
           '</div>' +
           '<div class="chess-stat-row"><span>W / D / L</span><span>' + w + ' / ' + d + ' / ' + l + '</span></div>' +
           '<div class="chess-stat-row"><span>win rate</span><span>' + winRate + '%</span></div>' +
-          streakRow +
           '</div>';
       } else {
         cardHtml = '<div class="chess-card"><h3>rapid</h3><p class="chess-empty">no rapid stats.</p></div>';
       }
 
+      const streakRow = (typeof streak === "number")
+        ? '<div class="chess-stat-row"><span>streak</span><span>' + streak + ' day' + (streak === 1 ? '' : 's') + '</span></div>'
+        : '';
+      const gamesRow = total
+        ? '<div class="chess-stat-row"><span>games</span><span>' + total + '</span></div>'
+        : '';
+
       root.innerHTML =
         '<div class="chess-grid">' +
           '<div class="chess-card chess-profile">' +
             (p.avatar ? '<img src="' + p.avatar + '" alt="">' : '') +
-            '<div>' +
+            '<div style="width:100%;">' +
               '<h3 style="margin:0;">' + titleBadge +
                 (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener">' + (p.username || "") + '</a>' : (p.username || "")) +
               '</h3>' +
@@ -130,6 +134,8 @@ chart:
                 (joinedYear ? "joined " + joinedYear : "") +
                 ' · updated ' + timeAgo(data.fetched_at) +
               '</div>' +
+              gamesRow +
+              streakRow +
             '</div>' +
           '</div>' +
           cardHtml +
