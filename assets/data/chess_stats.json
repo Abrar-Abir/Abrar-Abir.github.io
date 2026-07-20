@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-19T01:55:32+00:00",
+  "fetched_at": "2026-07-20T02:12:40+00:00",
   "profile": {
     "username": "nu11pointer",
     "title": null,
@@ -13,9 +13,9 @@
   "stats": {
     "chess_rapid": {
       "last": {
-        "rating": 1092,
-        "date": 1784386690,
-        "rd": 32
+        "rating": 1100,
+        "date": 1784488068,
+        "rd": 33
       },
       "best": {
         "rating": 1349,
@@ -23,13 +23,13 @@
         "game": "https://www.chess.com/game/live/169124314242"
       },
       "record": {
-        "win": 872,
+        "win": 873,
         "loss": 826,
         "draw": 42
       }
     },
-    "rapid_streak_days": 124,
-    "chess_com_streak_days": 270
+    "rapid_streak_days": 125,
+    "chess_com_streak_days": 271
   },
   "rating_history": {
     "rapid": [
@@ -95,7 +95,7 @@
       },
       {
         "month": "2026-07",
-        "rating": 1092
+        "rating": 1100
       }
     ]
   }
