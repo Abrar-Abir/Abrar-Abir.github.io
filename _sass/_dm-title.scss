@@ -1,0 +1,60 @@
+// Departure Mono font + uppercase, scoped to the site title and navbar brand.
+
+@font-face {
+  font-family: "Departure Mono";
+  src:
+    url("/assets/fonts/DepartureMono-Regular.woff2") format("woff2"),
+    url("/assets/fonts/DepartureMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MatrixType";
+  src:
+    url("/assets/fonts/MatrixType-Regular.woff2") format("woff2"),
+    url("/assets/fonts/MatrixType-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+%dm-title-font {
+  font-family: "Departure Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  text-transform: uppercase;
+  font-feature-settings: "locl";
+  letter-spacing: 0;
+}
+
+.dm-title,
+.navbar-brand.title {
+  @extend %dm-title-font;
+}
+
+.dm-scramble-first,
+.dm-scramble-space,
+.dm-scramble-last {
+  display: inline-block;
+  white-space: pre;
+  font-variant-ligatures: none;
+}
+
+.dm-dotted {
+  font-family: "MatrixType", "Departure Mono", ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  vertical-align: baseline;
+}
+
+.dm-strike {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.dm-mark {
+  background-color: var(--global-mark-bg-color);
+  padding: 0.05em 0.3em;
+  border-radius: 2px;
+}

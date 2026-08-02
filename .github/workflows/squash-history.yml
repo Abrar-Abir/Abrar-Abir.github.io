@@ -1,0 +1,29 @@
+name: Squash History
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Squash all commits into one
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout --orphan squash-temp
+          git add -A
+          git commit -m "initial commit"
+
+          git branch -D master
+          git branch -m master
+          git push --force origin master
