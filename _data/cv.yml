@@ -1,0 +1,146 @@
+- title: Education
+  type: time_table
+  contents:
+    - title: B.Sc. in Computer Science
+      institution: Carnegie Mellon University
+      year: 2021 - 2025
+      description:
+        - "Concentration in Security & Privacy"
+        - Graduated in Dec 2025
+
+- title: Internship
+  type: time_table
+  contents:
+    - title: Full Stack Developer, Biomedical Informatics Core
+      institution: Sidra Medicine Research Division, Doha, Qatar
+      year: May 2024 - Present
+      description:
+        - Led development of integrated web-based platform for genomic data management across research workflows, national genomic initiatives and clinical diagnostics
+        - Designed real-time sequencing quality intelligence system across multiple sequencing platforms to identify technical issues and improve turnaround times
+        - Harmonized genomic and sample metadata across multiple cores, establishing FAIR-aligned data stewardship principles to support dataset interoperability
+
+- title: Publications
+  type: time_table
+  contents:
+    - title: Large Trait-Based Dataset for Arabic Automated Essay Scoring
+      year: 2026
+      description:
+        - "Bashendy et al. <i>LAILA: A Large Trait-Based Dataset for Arabic Automated Essay Scoring</i>, arXiv:2512.24235."
+        - In Proceedings of 2026 EACL Conference, March 2026, Rabat, Morocco
+    - title: Propagandist Technique Detection in Arabic at ArAiEval Task 01
+      year: 2024
+      description:
+        - "Abir et al. <i>Nullpointer at ArAIEval Shared Task: Arabic propagandist technique detection with token-to-word mapping in sequence tagging</i>, arXiv:2407.01360."
+        - In Proceedings of 2024 ArabicNLP Conference, August 2024, Bangkok, Thailand
+    - title: Multilingual Subjectivity Detection at CheckThat! Lab Task 02
+      year: 2024
+      description:
+        - "Biswas et al. <i>Nullpointer at CheckThat! 2024: identifying subjectivity from multilingual text sequence</i>, arXiv:2407.10252."
+        - In Proceedings of 2024 CLEF Conference, September 2024, Grenoble, France
+    - title: Synergy-Optimized Bid Generation Algorithm in Transportation
+      year: 2025
+      description:
+        - "Hasan et al. <i>Advanced synergy-driven algorithms for bid generation in transportation auctions</i>, DOI: 10.1007/s10479-025-06492-0."
+        - In Annals of Operations Research, 2025, Volume 347, pages 1339-1384
+
+- title: Research
+  type: time_table
+  contents:
+    - title: Automated Scoring of Arabic Language Writing Proficiency
+      institution: Qatar National Research Fund
+      year: March 2025 - Dec 2025
+      description:
+        - A joint research project leveraging NLP & education to build the first automated system in the Arab region to evaluate students' Arabic writing proficiency across multiple dimensions, similar to standardized English exams like IELTS and TOEFL.
+    - title: "HyBrush: A Hybrid UAV Brushing System for PV Cleaning"
+      institution: Undergraduate Research Experience Program
+      year: Jan 2023 - May 2024
+      description:
+        - An interdisciplinary research project focused on developing an Unmanned Aerial Vehicle (UAV) system for the dry cleaning and real-time monitoring of photovoltaic (PV) cells, integrating robotics with reinforcement learning.
+    - title: Survey of Internet-connected Camera Systems in Qatar
+      institution: Research Assistant
+      year: Jan 2023 - May 2023
+      description:
+        - An IoT security research project for assessing the vulnerabilities of internet connected video camera systems - by analyzing port scanning data, identifying exposure and cross-referencing vulnerabilities with the CVE database.
+
+- title: Mentorship
+  type: time_table
+  contents:
+    - title: Course Assistant
+      institution: Academic Resource Center, CMU-Q
+      year: Jan 2022 - May 2024
+      description:
+        - "Courses: Concepts of Mathematics, Principles of Computing, Fundamentals of Programming & Computer Science, Great Theoretical Ideas in Computer Science, Parallel & Sequential Data Structures & Algorithms"
+        - Held tutoring sessions & coding interviews, and graded assignments.
+
+- title: Skills
+  type: list_groups
+  contents:
+    - category: Languages
+      icon: "fa-solid fa-code"
+      items:
+        - name: Python
+        - name: Java
+        - name: C
+        - name: JavaScript
+        - name: SML
+    - category: Frameworks
+      icon: "fa-solid fa-layer-group"
+      items:
+        - name: React
+        - name: Flask
+        - name: FastAPI
+        - name: Tailwind CSS
+    - category: Tools
+      icon: "fa-solid fa-screwdriver-wrench"
+      items:
+        - name: PostgreSQL
+        - name: ChromaDB
+        - name: CPLEX
+
+- title: Courses
+  type: list
+  contents:
+    - Natural Language Processing
+    - Prompt Engineering (Graduate level)
+    - "Usable Privacy & Security"
+    - "Privacy Policy, Law & Technology"
+
+- title: Projects
+  type: time_table
+  contents:
+    - title: Clickbait Detection
+      year: ""
+      description:
+        - "Python | Fine-tuned BERT to detect Clickbait from content title with 86.6% accuracy"
+    - title: Language Identification
+      year: ""
+      description:
+        - Python | n-gram model for multinomial regression to identify 6 linguistically close languages
+    - title: Safe Interpreter
+      year: ""
+      description:
+        - C | A web server supporting query for safe interpretation of scripting language
+    - title: Sandbox Enforcer
+      year: ""
+      description:
+        - C | A runtime enforcement of a system call sandbox policy using Pintools
+
+- title: Engagement
+  type: nested_list
+  contents:
+    - title: Robotics Club
+      items:
+        - Executive Member, Fall 2022
+        - President, Spring 2023
+    - title: Chess Club
+      items:
+        - Event Organizer, Fall 2021 - Spring 2023
+    - title: Competitions & Awards
+      items:
+        - 5th Place, Qatar National CTF Competition 2023
+        - 644th Place, Putnam Math Competition 2023
+        - Winner, Qatar Collegiate Programming Contest
+    - title: Other
+      items:
+        - Logo Designer, School of Computer Science, CMU-Q
+        - CMUQ Cricket Team - Runner Up, Education City Tournament
