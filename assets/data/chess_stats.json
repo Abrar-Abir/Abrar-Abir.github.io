@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-14T02:55:01+00:00",
+  "fetched_at": "2026-10-15T02:34:12+00:00",
   "profile": {
     "username": "nu11pointer",
     "title": null,
@@ -28,8 +28,8 @@
         "draw": 52
       }
     },
-    "rapid_streak_days": 12,
-    "chess_com_streak_days": 352
+    "rapid_streak_days": 0,
+    "chess_com_streak_days": 353
   },
   "rating_history": {
     "rapid": [
