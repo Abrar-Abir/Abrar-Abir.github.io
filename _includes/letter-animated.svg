@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Animated abrar -> abir highlight sequence: 9 crossfading layers (CSS keyframes), loops forever. Layer 9 repeats layer 0 for a seamless loop seam. Each outgoing layer fades out along o=(1-0.65/(1-0.35a))/0.35 while the incoming one ramps linearly (a), so dim pieces shared by both frames keep a constant 0.35 combined alpha (no glow).-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="807" height="774" viewBox="0 0 807 774">
+  <style type="text/css">
+    /* Transparent background (no bg rect). Colour: highlighted pieces (.h) = solid theme colour, dimmed (.d) = same colour at 35% fill-opacity.
+       Embedding: img-tag or CSS-background -> `color-scheme: light dark` makes the default text colour (currentColor) black in light OS mode and white in dark OS mode.
+       Inline (markup in the page) -> no `color` is set here, so it inherits the host's CSS `color` (follows the site theme). Override either way with --letter-color (e.g. style="--letter-color:#0a7"). */
+    svg{color-scheme:light dark}
+    .h,.d{fill:var(--letter-color,currentColor)}
+    .d{fill-opacity:.35}
+    @keyframes lf0{0.0000%{opacity:1} 7.4074%{opacity:1} 7.7160%{opacity:0.9442} 8.0247%{opacity:0.885} 8.3333%{opacity:0.8219} 8.6420%{opacity:0.7547} 8.9506%{opacity:0.6829} 9.2593%{opacity:0.6061} 9.5679%{opacity:0.5236} 9.8765%{opacity:0.4348} 10.1852%{opacity:0.339} 10.4938%{opacity:0.2353} 10.8025%{opacity:0.1227} 11.1111%{opacity:0} 100.0000%{opacity:0}}
+    .lf0{opacity:1;animation:lf0 8.1s linear infinite}
+    @keyframes lf1{0.0000%{opacity:0} 7.4074%{opacity:0} 11.1111%{opacity:1} 18.5185%{opacity:1} 18.8272%{opacity:0.9442} 19.1358%{opacity:0.885} 19.4444%{opacity:0.8219} 19.7531%{opacity:0.7547} 20.0617%{opacity:0.6829} 20.3704%{opacity:0.6061} 20.6790%{opacity:0.5236} 20.9877%{opacity:0.4348} 21.2963%{opacity:0.339} 21.6049%{opacity:0.2353} 21.9136%{opacity:0.1227} 22.2222%{opacity:0} 100.0000%{opacity:0}}
+    .lf1{opacity:0;animation:lf1 8.1s linear infinite}
+    @keyframes lf2{0.0000%{opacity:0} 18.5185%{opacity:0} 22.2222%{opacity:1} 29.6296%{opacity:1} 29.9383%{opacity:0.9442} 30.2469%{opacity:0.885} 30.5556%{opacity:0.8219} 30.8642%{opacity:0.7547} 31.1728%{opacity:0.6829} 31.4815%{opacity:0.6061} 31.7901%{opacity:0.5236} 32.0988%{opacity:0.4348} 32.4074%{opacity:0.339} 32.7160%{opacity:0.2353} 33.0247%{opacity:0.1227} 33.3333%{opacity:0} 100.0000%{opacity:0}}
+    .lf2{opacity:0;animation:lf2 8.1s linear infinite}
+    @keyframes lf3{0.0000%{opacity:0} 29.6296%{opacity:0} 33.3333%{opacity:1} 40.7407%{opacity:1} 41.0494%{opacity:0.9442} 41.3580%{opacity:0.885} 41.6667%{opacity:0.8219} 41.9753%{opacity:0.7547} 42.2840%{opacity:0.6829} 42.5926%{opacity:0.6061} 42.9012%{opacity:0.5236} 43.2099%{opacity:0.4348} 43.5185%{opacity:0.339} 43.8272%{opacity:0.2353} 44.1358%{opacity:0.1227} 44.4444%{opacity:0} 100.0000%{opacity:0}}
+    .lf3{opacity:0;animation:lf3 8.1s linear infinite}
+    @keyframes lf4{0.0000%{opacity:0} 40.7407%{opacity:0} 44.4444%{opacity:1} 51.8519%{opacity:1} 52.1605%{opacity:0.9442} 52.4691%{opacity:0.885} 52.7778%{opacity:0.8219} 53.0864%{opacity:0.7547} 53.3951%{opacity:0.6829} 53.7037%{opacity:0.6061} 54.0123%{opacity:0.5236} 54.3210%{opacity:0.4348} 54.6296%{opacity:0.339} 54.9383%{opacity:0.2353} 55.2469%{opacity:0.1227} 55.5556%{opacity:0} 100.0000%{opacity:0}}
+    .lf4{opacity:0;animation:lf4 8.1s linear infinite}
+    @keyframes lf5{0.0000%{opacity:0} 51.8519%{opacity:0} 55.5556%{opacity:1} 62.9630%{opacity:1} 63.2716%{opacity:0.9442} 63.5802%{opacity:0.885} 63.8889%{opacity:0.8219} 64.1975%{opacity:0.7547} 64.5062%{opacity:0.6829} 64.8148%{opacity:0.6061} 65.1235%{opacity:0.5236} 65.4321%{opacity:0.4348} 65.7407%{opacity:0.339} 66.0494%{opacity:0.2353} 66.3580%{opacity:0.1227} 66.6667%{opacity:0} 100.0000%{opacity:0}}
+    .lf5{opacity:0;animation:lf5 8.1s linear infinite}
+    @keyframes lf6{0.0000%{opacity:0} 62.9630%{opacity:0} 66.6667%{opacity:1} 74.0741%{opacity:1} 74.3827%{opacity:0.9442} 74.6914%{opacity:0.885} 75.0000%{opacity:0.8219} 75.3086%{opacity:0.7547} 75.6173%{opacity:0.6829} 75.9259%{opacity:0.6061} 76.2346%{opacity:0.5236} 76.5432%{opacity:0.4348} 76.8519%{opacity:0.339} 77.1605%{opacity:0.2353} 77.4691%{opacity:0.1227} 77.7778%{opacity:0} 100.0000%{opacity:0}}
+    .lf6{opacity:0;animation:lf6 8.1s linear infinite}
+    @keyframes lf7{0.0000%{opacity:0} 74.0741%{opacity:0} 77.7778%{opacity:1} 85.1852%{opacity:1} 85.4938%{opacity:0.9442} 85.8025%{opacity:0.885} 86.1111%{opacity:0.8219} 86.4198%{opacity:0.7547} 86.7284%{opacity:0.6829} 87.0370%{opacity:0.6061} 87.3457%{opacity:0.5236} 87.6543%{opacity:0.4348} 87.9630%{opacity:0.339} 88.2716%{opacity:0.2353} 88.5802%{opacity:0.1227} 88.8889%{opacity:0} 100.0000%{opacity:0}}
+    .lf7{opacity:0;animation:lf7 8.1s linear infinite}
+    @keyframes lf8{0.0000%{opacity:0} 85.1852%{opacity:0} 88.8889%{opacity:1} 96.2963%{opacity:1} 96.6049%{opacity:0.9442} 96.9136%{opacity:0.885} 97.2222%{opacity:0.8219} 97.5309%{opacity:0.7547} 97.8395%{opacity:0.6829} 98.1481%{opacity:0.6061} 98.4568%{opacity:0.5236} 98.7654%{opacity:0.4348} 99.0741%{opacity:0.339} 99.3827%{opacity:0.2353} 99.6914%{opacity:0.1227} 100.0000%{opacity:0}}
+    .lf8{opacity:0;animation:lf8 8.1s linear infinite}
+    @keyframes lf9{0.0000%{opacity:0} 96.2963%{opacity:0} 100.0000%{opacity:1}}
+    .lf9{opacity:0;animation:lf9 8.1s linear infinite}
+  </style>
+  <g class="lf0" data-frame="abrar-1-a">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 539.64 L 301.85 592.85 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 301.85 590.85 L 301.85 671.94 L 248.65 724.73 L 248.65 614.70 L 246.95 610.11 L 188.53 541.95 L 220.75 509.74 Z" class="h" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf1" data-frame="abrar-2-b">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 250.65 539.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 250.65 620.10 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="h" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 450.84 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf2" data-frame="abrar-3-r">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 248.65 537.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 248.65 614.70 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="h" pointer-events="all"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf3" data-frame="abrar-4-a">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 248.65 614.70 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="h" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf4" data-frame="abrar-5-r">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 248.65 614.70 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="h" pointer-events="all"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf5" data-frame="abir-1-a">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 539.64 L 301.85 592.85 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 301.85 590.85 L 301.85 671.94 L 248.65 724.73 L 248.65 614.70 L 246.95 610.11 L 188.53 541.95 L 220.75 509.74 Z" class="h" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf6" data-frame="abir-2-b">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 250.65 539.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 250.65 620.10 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="h" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 450.84 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf7" data-frame="abir-3-i">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 248.65 614.70 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="h" pointer-events="all"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf8" data-frame="abir-4-r">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 220.75 509.74 L 188.53 541.95 L 246.95 610.11 L 248.65 614.70 L 248.65 724.73 L 301.85 671.94 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="h" pointer-events="all"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+  <g class="lf9" data-frame="abrar-1-a">
+<g>
+    <g data-cell-id="0">
+      <g data-cell-id="1">
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-34">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 413.75 471.5 L 456.25 514.5 L 413.75 557.5 L 371.25 514.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="akBErZOgwuY-R6K_7PR8-35">
+          <g transform="translate(0.5,0.5)">
+            <path d="M 553.75 540.5 L 596.25 583.5 L 553.75 626.5 L 511.25 583.5 Z" class="d" pointer-events="all"/>
+          </g>
+        </g>
+        <g data-cell-id="letter-fill">
+          <path d="M 297.99 531.50 L 350.26 479.23 L 381.85 511.44 L 381.85 652.16 L 330.25 703.76 L 297.87 671.38 L 330.25 641.50 L 330.25 561.50 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 539.64 L 301.85 592.85 L 301.85 461.44 L 270.26 429.23 L 248.65 450.84 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 467.00 600.00 L 468.65 604.70 L 468.65 714.99 L 521.85 662.17 L 521.85 582.70 L 460.42 519.37 L 428.24 551.55 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 410.56 560.23 L 388.65 582.14 L 388.65 731.86 L 420.04 763.26 L 472.34 711.33 L 443.64 682.63 L 441.85 678.30 L 441.85 592.14 Z" class="d" stroke="none" pointer-events="none"/>
+          <path d="M 248.65 537.64 L 301.85 590.85 L 301.85 671.94 L 248.65 724.73 L 248.65 614.70 L 246.95 610.11 L 188.53 541.95 L 220.75 509.74 Z" class="h" stroke="none" pointer-events="none"/>
+          <path d="M 190.26 570.23 L 168.65 591.84 L 168.65 742.16 L 199.74 773.26 L 252.21 721.20 L 223.64 692.63 L 221.85 688.30 L 221.85 602.44 Z" class="h" stroke="none" pointer-events="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  </g>
+</svg>
